@@ -1,7 +1,7 @@
 # Личный проект «Кэт энерджи» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 * Студент: [Petr Podovalov](https://up.htmlacademy.ru/adaptive/20/user/1175637).
-* Наставник: [Константин Соколов] (https://htmlacademy.ru/profile/costigans).
+* Наставник: [Константин Соколов](https://htmlacademy.ru/profile/costigans).
 
 ---
 
