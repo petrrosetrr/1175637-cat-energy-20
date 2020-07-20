@@ -25,10 +25,10 @@
   </div>
 </header>
 <main class="page-main">
-  <h1 class="section-title">Подбор программы</h1>
-  <p class="subtitle">Заполните анкету, и мы подберем
-    программу питания для вашего кота</p>
-  <form action="https://echo.htmlacademy.ru" class="select-program-form">
+  <form class="select-program-form" action="https://echo.htmlacademy.ru"  method="post">
+    <h1 class="select-program-form__title title">Подбор программы</h1>
+    <p class="select-program-form__subtitle subtitle">Заполните анкету, и мы подберем
+      программу питания для вашего кота</p>
     <fieldset class="select-program-form__cat-info">
       <label>
         <span>ИМЯ:<sup>*</sup></span>
@@ -42,7 +42,7 @@
         <span>Возраст (лет):</span>
         <input placeholder="7" type="number" name="age">
       </label>
-      <ul class="select-program-form__radio-list">
+      <ul class="select-program-form__program-select">
         <li>
           <label>
             <input type="radio" name="program" value="lose-weight" checked>
@@ -96,8 +96,8 @@
   </form>
 </main>
 <footer class="page-footer">
-  <div class="page-footer__partnership-container container">
-    <section class="partnership">
+  <section class="partnership">
+    <div class="partnership__container container">
       <h2 class="partnership__title">
         Приглашаем<br>
         к сотрудничеству дилеров!
@@ -107,21 +107,23 @@
         Конюшенная, д. 19/8<br>
         Санкт-Петербург
       </p>
-    </section>
-  </div>
+    </div>
+  </section>
   <section class="page-footer__map map"></section>
-  <div class="page-footer__metadata-container container">
-    <img class="page-footer__text-logo text-logo" src="" alt="Логотип">
-    <ul class="socials">
-      <li class=""><a class="socials__link socials__link_vk" href=""></a></li>
-      <li class=""><a class="socials__link socials__link_inst" href=""></a></li>
-      <li class=""><a class="socials__link socials__link_fb" href=""></a></li>
-    </ul>
-    <section class="developer">
-      <p class="developer__name">HTML Academy</p>
-      <img src="https://via.placeholder.com/27x34" alt="Логотип Академии" class="developer__logo">
-    </section>
-  </div>
+  <section class="metadata">
+    <div class="metadata__container container">
+      <img class="page-footer__text-logo text-logo" src="" alt="Логотип">
+      <ul class="socials">
+        <li class=""><a class="socials__link socials__link_vk" href=""></a></li>
+        <li class=""><a class="socials__link socials__link_inst" href=""></a></li>
+        <li class=""><a class="socials__link socials__link_fb" href=""></a></li>
+      </ul>
+      <section class="developer">
+        <p class="developer__name">HTML Academy</p>
+        <img src="https://via.placeholder.com/27x34" alt="Логотип Академии" class="developer__logo">
+      </section>
+    </div>
+  </section>
 </footer>
 </body>
 </html>
