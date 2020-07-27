@@ -4,20 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" >
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald&display=swap">
   <title>HTML Academy: Кэт энерджи - Каталог</title>
 </head>
 <body class="page__body">
 <header class="page-header">
   <div class="page-header__container container">
     <div class="page-header__static">
-      <a href="index.html"><img class="page-header__img-logo img-logo" src="https://via.placeholder.com/32x37?text=logo" alt="Логотип" width="33" height="37"></a>
-      <a href="index.html"><img class="page-header__text-logo text-logo" src="https://via.placeholder.com/101x18?text=cat+Energy" alt="Cat Energy" width="101" height="18"></a>
+      <a href="index.html"><img class="page-header__img-logo img-logo" src="https://via.placeholder.com/32x37?text=logo" alt="Логотип" width="33" height="37"></a> <a href="index.html"><img class="page-header__text-logo text-logo" src="https://via.placeholder.com/101x18?text=cat+Energy" alt="Cat Energy" width="101" height="18"></a>
       <button class="page-header__toggle" aria-label="Меню"></button>
     </div>
     <nav class="page-header__nav site-nav">
       <ul class="page-header__list site-nav__list">
-        <li class="site-nav__list-item"><a href="index.html" class="site-nav__link site-nav__link_active">Главная</a></li>
+        <li class="site-nav__list-item"><a href="index.html" class="site-nav__link site-nav__link_active">Главная</a>
+        </li>
         <li class="site-nav__list-item"><a href="catalog.html" class="site-nav__link">Каталог продукции</a></li>
         <li class="site-nav__list-item"><a href="form.html" class="site-nav__link">Подбор программы</a></li>
       </ul>
@@ -179,6 +179,7 @@
           </li>
         </ul>
         <section class="additional-products__promo promo">
+          <h2 class="visually-hidden">Акции</h2>
           <p class="promo__text">Закажите все и получите чехол для кота в подарок!</p>
         </section>
       </section>
@@ -190,23 +191,31 @@
     <div class="partnership__container container">
       <h2 class="visually-hidden">Наш адрес</h2>
       <p class="partnership__title">Приглашаем к сотрудничеству дилеров!</p>
-      <address class="partnership__address" >ул. Большая Конюшенная, д. 19/8 Санкт-Петербург</address>
+      <address class="partnership__address">ул. Большая Конюшенная, д. 19/8 Санкт-Петербург</address>
     </div>
   </section>
   <section class="page-footer__map map">
+    <h2 class="visually-hidden">Как нас найти на карте</h2>
     <img class=" page-footer__map-img map__img" src="https://via.placeholder.com/320x362?text=map" alt="Карта" width="320" height="362">
   </section>
   <section class="metadata">
     <div class="metadata__container container">
-      <img class="page-footer__text-logo text-logo" src="" alt="Логотип">
+      <h2 class="visually-hidden">Наши социальные сети</h2>
+      <a href="index.html"><img class="page-footer__text-logo text-logo" src="https://via.placeholder.com/128x24?text=text-logo" alt="Логотип"></a>
       <ul class="socials">
-        <li class=""><a class="socials__link socials__link_vk" href="https://vk.com/htmlacademy" aria-label="Вконтакте"></a></li>
-        <li class=""><a class="socials__link socials__link_inst" href="https://www.instagram.com/htmlacademy" aria-label="Инстаграм"></a></li>
-        <li class=""><a class="socials__link socials__link_fb" href="https://www.facebook.com/htmlacademy" aria-label="Фейсбук"></a></li>
+        <li class="">
+          <a class="socials__link socials__link_vk" href="https://vk.com/htmlacademy"><span class="visually-hidden">Вконтакте</span></a>
+        </li>
+        <li class="">
+          <a class="socials__link socials__link_inst" href="https://www.instagram.com/htmlacademy"><span class="visually-hidden">Инстаграм</span></a>
+        </li>
+        <li class="">
+          <a class="socials__link socials__link_fb" href="https://www.facebook.com/htmlacademy"><span class="visually-hidden">Фейсбук</span></a>
+        </li>
       </ul>
       <section class="developer">
-        <a class="developer__name" href="https://htmlacademy.ru/intensive/adaptive">HTML Academy</a>
-        <a href="https://htmlacademy.ru/intensive/adaptive"><img src="https://via.placeholder.com/27x34" alt="Логотип Академии" class="developer__logo"></a>
+        <h2 class="visually-hidden">О разработчике</h2>
+        <a class="developer__name" href="https://htmlacademy.ru/intensive/adaptive">HTML Academy</a> <a href="https://htmlacademy.ru/intensive/adaptive"><img src="https://via.placeholder.com/27x34" alt="Логотип Академии" class="developer__logo"></a>
       </section>
     </div>
   </section>
