@@ -1,4 +1,4 @@
-window.onload = function () {
+
   let toggleBtn = document.querySelector(".page-header__toggle");
   let pageHeader = document.querySelector(".page-header");
   toggleBtn.classList.remove("page-header__toggle_close");
@@ -31,4 +31,4 @@ window.onload = function () {
 
 
 
-}
+
