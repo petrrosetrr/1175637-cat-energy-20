@@ -302,6 +302,12 @@ a {
       }
     }
   }
+  &_index {
+    @media screen and (min-width: $desktop){
+      position: relative;
+      z-index: 2;
+    }
+  }
   @media screen and (min-width: $tablet) {
     padding-top: 24px;
     min-height: 76px;
@@ -330,6 +336,19 @@ a {
       flex-basis: 440px;
       flex-grow: 1;
       max-width: 500px;
+    }
+  }
+  @media screen and (min-width: $desktop){
+    padding-top: 53px;
+    min-height: 107px;
+
+    &__site-nav {
+      flex-basis: 480px;
+    }
+
+    &__img-logo img {
+      width: 202px;
+      height: 59px;
     }
   }
 }
@@ -370,6 +389,7 @@ a {
           bottom: -7px;
           height: 2px;
           background-color: $basic-green;
+
         }
       }
     }
@@ -396,21 +416,46 @@ a {
 
     }
   }
+  &_index {
+    @media screen and (min-width: $desktop){
+      color: white;
+      .site-nav__link_active {
+        span::after {
+          background-color: white;
+        }
+      }
+    }
+  }
+
 }
 
 .page-main_index {
   &__programs-list {
     margin-top: 22px;
     margin-bottom: 27px;
-    @media screen and (min-width: 768px){
+    @media screen and (min-width: $tablet){
       margin-top: 0;
       margin-bottom: 45px;
+    }
+    @media screen and (min-width: $desktop){
+      margin-top: 0;
+      margin-bottom: 71px;
     }
   }
 
   &__select-program {
     @media screen and (max-width: $tablet - 1) {
       @include unpadding(true);
+    }
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 82px;
+    }
+
+  }
+  &__how-it-works {
+    margin-bottom: 42px;
+    @media screen and (min-width: $desktop){
+      margin-bottom: 11px;
     }
   }
 
@@ -487,6 +532,41 @@ a {
       position: absolute;
       top: 290px;
       left: 82px;
+    }
+  }
+  @media screen and (min-width: $desktop){
+    @include unpadding(true)
+    min-height: 696px;
+    position: relative;
+    z-index: 1;
+    margin-top: -112px;
+    background-image: url("../img/index-background-desktop@1x.jpg");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 720px 696px;
+    &__container {
+      padding-top: 224px;
+      position: relative;
+      padding-left: 82px;
+    }
+    &__can-img {
+      position: absolute;
+      top: 141px;
+      right: 220px;
+      width: 552px;
+      height: 499px;
+    }
+    &__button {
+      position: static;
+    }
+
+    &__title {
+      margin-left: 0;
+      margin-bottom: 39px;
+    }
+    &__slogan {
+      margin: 0;
+      margin-bottom: 52px;
     }
   }
 }
@@ -631,11 +711,47 @@ a {
       line-height: 20px;
     }
   }
+  @media screen and (min-width: $desktop) {
+    &__container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      & > * + * {
+        margin: 0;
+        margin-left: 80px;
+      }
+    }
+    &__title {
+      margin-left: 162px;
+      margin-top: 36px;
+      margin-bottom: 73px;
+    }
+    &__item {
+      flex-basis: 570px;
+      padding: 41px 52px 55px 52px;
+      min-height: 374px;
+      &_lose-weight {
+        background-origin: content-box;
+        background-size: 100px 106px;
+        background-position: top left;
+      }
+      &_get-fat {
+        background-origin: content-box;
+        background-size: 134px 100px;
+        background-position: top left;
+      }
+
+    }
+    &__text {
+      max-width: 100%;
+      margin-bottom: 23px;
+    }
+  }
 }
 
 
 .how-it-works {
-  margin-bottom: 42px;
+
 
   &__title {
     line-height: 40px;
@@ -740,6 +856,16 @@ a {
     &__text {
       margin: 0;
       margin-top: 111px;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    padding-bottom: 0;
+    border: none;
+    &__item {
+      grid-column: auto / span 1;
+    }
+    &__text {
+      max-width: 82%;
     }
   }
 }
@@ -941,13 +1067,12 @@ a {
       opacity: 100%;
       position: absolute;
       object-fit: cover;
-      width: 50%;
       height: 100%;
       top: 0;
 
       &_before {
         left: 0;
-        object-position: 0 center;
+        object-position: left center;
         width: 50%
       }
 
@@ -1017,6 +1142,71 @@ a {
     }
 
   }
+  @media screen and (min-width: $desktop){
+    background-image: linear-gradient(to top, $basic-gray 0%, $basic-gray 77.2%, white 77.2%, white 100%);
+    padding-top: 58px;
+    padding-bottom: 67px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3,min-content);
+
+
+    &__title {
+      margin-bottom: 146px;
+      padding: 0;
+    }
+    &__text {
+      margin-bottom: 69px;
+      max-width: 436px;
+    }
+    &__title, &__text, &__statistic {
+      grid-column: 1/2;
+
+    }
+    &__slider {
+      grid-column: 2 / 3;
+      grid-row: 1 / -1;
+    }
+
+    &__statistic {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 0;
+    }
+    &__items-highlighted {
+      & > * + * {
+        margin-left: 42px;
+      }
+      margin-bottom: 55px;
+    }
+    &__item-title {
+      background-color: $basic-gray;
+    }
+    &__goal-price {
+      flex-direction: row-reverse;
+      gap: 0;
+      text-align: left;
+      justify-content: flex-end;
+      margin-bottom: 8px;
+      & > * + * {
+        margin-right: 63px;
+      }
+    }
+    &__img-container {
+      min-width: 708px;
+      margin-bottom: 73px;
+    }
+    &__slide {
+      &_before {
+        width: 52%;
+      }
+      &_after {
+        width: 48%;
+      }
+    }
+  }
 }
 
 
@@ -1024,13 +1214,22 @@ a {
   &__map {
     @include unpadding();
   }
-
+  @media screen and (min-width: $desktop) {
+    position: relative;
+  }
   &__metadata {
     @include unpadding(true);
   }
 
   &__partnership {
-      @include unpadding(true)
+      @media screen and (max-width: $desktop - 1){
+        @include unpadding(true);
+      }
+      @media screen and (min-width: $desktop) {
+        position: absolute;
+        top: 95px;
+        left: 110px;
+      }
   }
 }
 
@@ -1056,14 +1255,21 @@ a {
     br {
       display: none;
     }
+
+
   }
 
   &_inner-page {
     background-color: $basic-gray;
   }
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1){
+    padding-left: 71px;
+    padding-right: 71px;
+  }
   @media screen and (min-width: $tablet){
     min-height: 201px;
-    padding: 41px 41px;
+    padding-top: 41px;
+    padding-bottom: 41px;
     align-items: center;
     &__title {
       font-size: 20px;
@@ -1085,6 +1291,15 @@ a {
 
     }
   }
+  @media screen and (min-width: $desktop){
+    width: 570px;
+    min-height: 201px;
+    background-color: white;
+    padding: 66px 89px 51px 76px;
+    &__title {
+      align-self: flex-start;
+    }
+  }
 }
 
 .map {
@@ -1101,6 +1316,15 @@ a {
       height: auto;
       margin: 0 auto;
       max-width: 800px;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    &__img {
+      width: 100%;
+      height: 100%;
+      max-height: 400px;
+      max-width: 1920px;
     }
   }
 }
@@ -1158,6 +1382,11 @@ a {
       display: block;
       padding: 0;
       border: 0;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    &__socials {
+      flex-basis: 130px;
     }
   }
 }
