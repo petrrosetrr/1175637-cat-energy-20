@@ -2,6 +2,18 @@
 @import "reset.scss";
 
 @font-face {
+  font-family: "Oswald";
+  font-weight: 400;
+  src: url("../fonts/oswaldregular.woff2"), url("../fonts/oswaldregular.woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Oswald";
+  font-weight: 500;
+  src: url("../fonts/oswaldmedium.woff2"), url("../fonts/oswaldmedium.woff");
+  font-display: swap;
+}
+@font-face {
   font-family: "Arial";
   src: local("Arial"), url("../fonts/Arial.woff2"), url("../fonts/Arial.woff");
   font-display: swap;
@@ -43,11 +55,11 @@ $desktop: 1440px;
 
   @media (min-width: 1440px) {
     margin-left: -#{$side-padding-d};
-    margin-right: -#{$side-padding-d};
+    margin-right: -93px;
 
     @if $padding-inside {
       padding-left: #{$side-padding-d};
-      padding-right: #{$side-padding-d};
+      padding-right: 93px;
     }
   }
 }
@@ -135,6 +147,7 @@ a {
 
   @media screen and (min-width: $desktop) {
     padding: 0 $side-padding-d;
+    padding-right: 93px;
   }
 }
 
@@ -199,7 +212,7 @@ a {
 }
 
 .text {
-  font-family: "Arial", serif;
+  font-family: "Arial", sans-serif;
   font-size: 14px;
   line-height: 18px;
   color: $special-dark-gray;
@@ -217,7 +230,8 @@ a {
     display: grid;
     grid-template-rows: min-content 1fr min-content;
     color: black;
-    font-family: "Oswald", serif;
+    font-family: "Oswald", "Arial", sans-serif;
+    overflow-x: hidden;
   }
 }
 
@@ -243,6 +257,7 @@ a {
   }
   &__img-logo,
   &__text-logo {
+
     &:hover,
     &:focus {
       opacity: 0.8;
@@ -252,9 +267,13 @@ a {
       opacity: 0.6;
     }
   }
+  &__text-logo {
+    margin-top: 5px;
+    margin-left: -9px;
+  }
   &__toggle {
     height: 18px;
-    margin-right: 3px;
+    margin-top: 4px;
     background: none;
     border: none;
     padding: 0;
@@ -432,7 +451,7 @@ a {
 .page-main_index {
   &__programs-list {
     margin-top: 22px;
-    margin-bottom: 27px;
+    margin-bottom: 30px;
     @media screen and (min-width: $tablet){
       margin-top: 0;
       margin-bottom: 45px;
@@ -479,13 +498,14 @@ a {
 
   &__title {
     line-height: 36px;
-    margin-bottom: 19px;
+    margin-bottom: 25px;
   }
 
   &__slogan {
     font-size: 14px;
     line-height: 14px;
     margin-bottom: 29px;
+    text-transform: uppercase;
   }
 
   &__can-img {
@@ -588,7 +608,7 @@ a {
     padding-top: 21px;
     padding-left: 22px;
     padding-right: 22px;
-    padding-bottom: 20px;
+    padding-bottom: 22px;
     background-repeat: no-repeat;
     background-origin: content-box;
     flex-grow: 1;
@@ -600,26 +620,27 @@ a {
     &_get-fat {
       background-image: url("../img/get-fat_bg.svg");
       background-origin: padding-box;
-      background-position: 13px 21px;
+      background-position: 13px 25px;
     }
   }
 
   &__title {
     font-size: 24px;
     line-height: 37px;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     margin-left: 69px;
     margin-top: 8px;
+    text-transform: uppercase;
   }
 
   &__text {
-    margin-bottom: 22px;
+    margin-bottom: 23px;
   }
 
   &__link {
     display: block;
     border-top: 1px solid #d9d9d9;
-    padding-top: 14px;
+    padding-top: 16px;
     font-size: 16px;
     line-height: 16px;
     font-family: inherit;
@@ -635,7 +656,7 @@ a {
         content: "";
         position: absolute;
         top: (calc(50% - 5px));
-        right: -57px;
+        right: -43px;
         width: 32px;
         height: 10px;
         background: url("../img/icon-right-arrow-long.svg") left center no-repeat;
@@ -755,7 +776,7 @@ a {
 
   &__title {
     line-height: 40px;
-    margin-bottom: 35px;
+    margin-bottom: 38px;
   }
 
   &__item {
@@ -872,11 +893,11 @@ a {
 
 .before-after {
   background-color: #eaeaea;
-  padding-top: 25px;
+  padding-top: 28px;
   padding-bottom: 39px;
 
   &__title {
-    padding-bottom: 30px;
+    margin-bottom: 35px;
   }
 
   &__text {
@@ -886,7 +907,8 @@ a {
   &__items-highlighted {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
+    text-transform: uppercase;
   }
 
   &__item-highlighted {
@@ -909,7 +931,7 @@ a {
     position: absolute;
     top: 45px;
     background-color: #eaeaea;
-    font-family: "Arial", serif;
+    font-family: "Arial", sans-serif;
     font-size: 12px;
     line-height: 12px;
     color: $special-dark-gray;
@@ -925,7 +947,7 @@ a {
     flex-direction: row-reverse;
     font-size: 14px;
     line-height: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
     text-transform: uppercase;
     gap: 4px;
   }
@@ -933,7 +955,7 @@ a {
   &__img-container {
     margin: 0 -20px;
     min-height: 240px;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
   }
 
   &__slide {
@@ -957,7 +979,7 @@ a {
     @extend .content-center;
 
     & > * + * {
-      margin-left: 17px;
+      margin-left: 12px;
     }
   }
 
@@ -1238,7 +1260,8 @@ a {
   min-height: 114px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  padding-top: 25px;
 
 
   &__title {
@@ -1248,7 +1271,8 @@ a {
   }
 
   &__address {
-    font-family: "Arial", serif;
+    margin-left: 20px;
+    font-family: "Arial", sans-serif;
     font-size: 14px;
     line-height: 20px;
     color: $special-dark-gray;
@@ -1278,7 +1302,7 @@ a {
       max-width: 171px;
     }
     &__address {
-      font-family: "Arial", serif;
+      font-family: "Arial", sans-serif;
       font-size: 16px;
       line-height: 19px;
       color: $special-dark-gray;
@@ -1303,28 +1327,23 @@ a {
 }
 
 .map {
-  &__img {
+  &__y-map {
     display: block;
     width: 100%;
-    max-width: 500px;
-    height: auto;
     margin: 0 auto;
+    height: 362px;
+    background: url("../img/bg-map-mobile@1x.png") no-repeat;
   }
   @media screen and (min-width: $tablet){
-    &__img {
-      width: 100%;
-      height: auto;
-      margin: 0 auto;
-      max-width: 800px;
+    &__y-map {
+      height: 400px;
+      background: url("../img/bg-map-tablet@1x.png") no-repeat;
     }
   }
 
   @media screen and (min-width: $desktop) {
     &__img {
-      width: 100%;
-      height: 100%;
-      max-height: 400px;
-      max-width: 1920px;
+      background: url("../img/bg-map-desktop@1x.png") no-repeat;
     }
   }
 }
@@ -1339,7 +1358,7 @@ a {
   &__logo {
     outline: none;
     display: block;
-    padding-top: 39px;
+    padding-top: 35px;
     padding-bottom: 32px;
 
     @include metadata-border;
@@ -1357,9 +1376,9 @@ a {
 
   &__socials {
     padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 73px;
-    padding-right: 75px;
+    padding-bottom: 23px;
+    padding-left: 77.5px;
+    padding-right: 77.5px;
     margin: 0 auto;
     @include metadata-border;
   }
@@ -1398,23 +1417,15 @@ a {
 
   &__link {
     display: block;
-
+    width: 25px;
     @extend .content-center;
     background-repeat: no-repeat;
     background-position: center;
-
     &:active svg {
       opacity: 0.3;
     }
 
     &_vk {
-      width: 28px;
-      height: 22px;
-      @media screen and (min-width: $tablet) {
-        svg {
-
-        }
-      }
       &:hover svg path,
       &:focus svg path {
         fill: $basic-green;
@@ -1422,9 +1433,9 @@ a {
     }
 
     &_inst {
-      width: 28px;
-      height: 22px;
 
+      /*margin-left: -18px;
+      margin-bottom: -3px;*/
       &:hover svg path,
       &:focus svg path {
         fill: $basic-green;
@@ -1432,9 +1443,8 @@ a {
     }
 
     &_fb {
-      width: 22px;
-      height: 22px;
 
+      /*margin-left: -18px;*/
       &:hover svg path,
       &:focus svg path {
         fill: none;
@@ -1455,7 +1465,7 @@ a {
     align-items: center;
     color: $special-dark-gray;
     text-decoration: none;
-    font-family: "Arial", serif;
+    font-family: "Arial", sans-serif;
     font-size: 16px;
     line-height: 18px;
 
@@ -1622,7 +1632,7 @@ a {
     display: grid;
   }
   &__text {
-    font-family: "Arial", serif;
+    font-family: "Arial", sans-serif;
     font-size: 12px;
     line-height: 16px;
     color: $special-dark-gray;
@@ -1854,7 +1864,7 @@ a {
 }
 
 .promo {
-  font-family: "Arial", serif;
+  font-family: "Arial", sans-serif;
   font-size: 16px;
   line-height: 20px;
   color: white;
@@ -2080,7 +2090,7 @@ a {
   &__required-notify {
     grid-column: 1/-1;
     text-align: center;
-    font-family: "Arial", serif;
+    font-family: "Arial", sans-serif;
     font-size: 14px;
     line-height: 16px;
 
@@ -2231,7 +2241,7 @@ a {
     justify-content: space-between;
     align-items: center;
     input {
-      font-family: "Oswald", serif;
+      font-family: "Oswald", "Arial", sans-serif;
       font-size: 16px;
       font-weight: normal;
       line-height: 18px;
@@ -2374,7 +2384,7 @@ a {
       }
 
       &::placeholder {
-        font-family: "Oswald", serif;
+        font-family: "Oswald", "Arial", sans-serif;
         text-transform: uppercase;
         color: $special-dark-gray;
         font-size: 16px;
