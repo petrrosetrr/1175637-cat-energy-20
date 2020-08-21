@@ -1,5 +1,6 @@
 
   let toggleBtn = document.querySelector(".page-header__toggle");
+  toggleBtn.style.opacity = "1";
   let pageHeader = document.querySelector(".page-header");
   toggleBtn.classList.remove("page-header__toggle_close");
   pageHeader.classList.add("page-header_close");
