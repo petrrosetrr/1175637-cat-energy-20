@@ -1,5 +1,6 @@
 
   let toggleBtn = document.querySelector(".page-header__toggle");
+  toggleBtn.style.opacity = "1";
   let pageHeader = document.querySelector(".page-header");
   toggleBtn.classList.remove("page-header__toggle_close");
   pageHeader.classList.add("page-header_close");
@@ -28,7 +29,4 @@
     btnAfter.classList.toggle("before-after__toggle_active");
     stripe.classList.toggle("before-after__slider-inner-stripe_active")
   }
-
-
-
 
