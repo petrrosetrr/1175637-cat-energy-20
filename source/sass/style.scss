@@ -18,6 +18,9 @@ $special-dark-gray-2: #222222;
 $side-padding-m: 20px;
 $side-padding-t: 30px;
 $side-padding-d: 110px;
+$mobile: 320px;
+$tablet: 768px;
+$desktop: 1440px;
 
 @mixin unpadding($padding-inside: false) {
   margin-left: -#{$side-padding-m};
@@ -91,12 +94,13 @@ a {
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  @media (min-width: 768px) {
+
+  @media (min-width: $tablet) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     column-gap: 60px;
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: $desktop) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     column-gap: 80px;
   }
@@ -123,13 +127,13 @@ a {
 .wrapper {
   padding: 0 $side-padding-m;
   margin: 0 auto;
-  min-width: 320px;
+  min-width: $mobile;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     padding: 0 $side-padding-t;
   }
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: $desktop) {
     padding: 0 $side-padding-d;
   }
 }
@@ -137,6 +141,9 @@ a {
 .title {
   font-size: 36px;
   font-weight: normal;
+  @media screen and (min-width: $tablet){
+    font-size: 60px;
+  }
 }
 
 .button {
@@ -172,7 +179,6 @@ a {
   &_show-all {
     background-color: $basic-gray;
     color: $special-dark-gray;
-
     &:hover,
     &:focus {
       background: $basic-gray-2;
@@ -182,6 +188,14 @@ a {
       color: rgba($special-dark-gray, 0.3);
     }
   }
+
+  @media screen and (min-width: $tablet){
+    min-height: 54px;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 17px;
+  }
+
 }
 
 .text {
@@ -190,6 +204,11 @@ a {
   line-height: 18px;
   color: $special-dark-gray;
   font-weight: normal;
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 24px;
+    color: black;
+  }
 }
 
 .page {
@@ -203,13 +222,13 @@ a {
 }
 
 .page-header {
-  @include unpadding();
-
+  @media (max-width: $tablet - 1px) {
+    @include unpadding();
+  }
   &_close {
     height: 66px;
     overflow: hidden;
   }
-
   &__static {
     display: flex;
     justify-content: space-between;
@@ -222,7 +241,6 @@ a {
     @extend .content-center;
     @include border-bottom(#E6E6E6);
   }
-
   &__img-logo,
   &__text-logo {
     &:hover,
@@ -234,7 +252,6 @@ a {
       opacity: 0.6;
     }
   }
-
   &__toggle {
     height: 18px;
     margin-right: 3px;
@@ -285,6 +302,55 @@ a {
       }
     }
   }
+  &_index {
+    @media screen and (min-width: $desktop){
+      position: relative;
+      z-index: 2;
+    }
+  }
+  @media screen and (min-width: $tablet) {
+    padding-top: 24px;
+    min-height: 76px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: unset;
+    overflow: unset;
+    &__static {
+      display: block;
+      padding: 0;
+      border: none;
+      margin-right: 79px;
+    }
+    &__text-logo, &__toggle {
+      display: none;
+    }
+    &__img-logo img {
+      width: 174px;
+      height: 52px;
+    }
+    &__static {
+      margin-right: 95px;
+    }
+    &__site-nav{
+      flex-basis: 440px;
+      flex-grow: 1;
+      max-width: 500px;
+    }
+  }
+  @media screen and (min-width: $desktop){
+    padding-top: 53px;
+    min-height: 107px;
+
+    &__site-nav {
+      flex-basis: 480px;
+    }
+
+    &__img-logo img {
+      width: 202px;
+      height: 59px;
+    }
+  }
 }
 
 .site-nav {
@@ -296,8 +362,7 @@ a {
     line-height: 20px;
     font-weight: 500;
     text-transform: uppercase;
-    text-align: center;
-
+    @extend .content-center;
     @include border-bottom(#E6E6E6);
 
     &:hover,
@@ -324,20 +389,74 @@ a {
           bottom: -7px;
           height: 2px;
           background-color: $basic-green;
+
         }
       }
     }
   }
+  @media screen and (min-width: $tablet) {
+    font-size: 18px;
+    line-height: 24px;
+    &__list {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    &__link {
+      margin: 0;
+      padding: 0;
+      border: none;
+      padding-bottom: 14px;
+      font-weight: 400;
+      &_active span::after {
+        bottom: -9px;
+      }
+
+    }
+  }
+  &_index {
+    @media screen and (min-width: $desktop){
+      color: white;
+      .site-nav__link_active {
+        span::after {
+          background-color: white;
+        }
+      }
+    }
+  }
+
 }
 
 .page-main_index {
   &__programs-list {
     margin-top: 22px;
     margin-bottom: 27px;
+    @media screen and (min-width: $tablet){
+      margin-top: 0;
+      margin-bottom: 45px;
+    }
+    @media screen and (min-width: $desktop){
+      margin-top: 0;
+      margin-bottom: 71px;
+    }
   }
 
   &__select-program {
-    @include unpadding(true);
+    @media screen and (max-width: $tablet - 1) {
+      @include unpadding(true);
+    }
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 82px;
+    }
+
+  }
+  &__how-it-works {
+    margin-bottom: 42px;
+    @media screen and (min-width: $desktop){
+      margin-bottom: 11px;
+    }
   }
 
   &__before-after {
@@ -374,6 +493,81 @@ a {
     height: auto;
     max-width: 400px;
     margin-bottom: 3px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    background: none;
+    color: black;
+    &__container {
+      padding-top: 67px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+    }
+    &__title {
+      line-height: 60px;
+      margin-bottom: 35px;
+      max-width: 414px;
+      text-align: left;
+      margin-left: 87px;
+    }
+    &__slogan {
+      font-size: 20px;
+      line-height: 20px;
+      margin-bottom: 20px;
+      margin-left: 87px;
+    }
+    &__can-img-container {
+      width: 100%;
+    }
+    &__can-img {
+      width: 100%;
+      height: auto;
+      max-width: 800px;
+
+    }
+    &__button {
+      width: 244px;
+      position: absolute;
+      top: 290px;
+      left: 82px;
+    }
+  }
+  @media screen and (min-width: $desktop){
+    @include unpadding(true)
+    min-height: 696px;
+    position: relative;
+    z-index: 1;
+    margin-top: -112px;
+    background-image: url("../img/index-background-desktop@1x.jpg");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 720px 696px;
+    &__container {
+      padding-top: 224px;
+      position: relative;
+      padding-left: 82px;
+    }
+    &__can-img {
+      position: absolute;
+      top: 141px;
+      right: 220px;
+      width: 552px;
+      height: 499px;
+    }
+    &__button {
+      position: static;
+    }
+
+    &__title {
+      margin-left: 0;
+      margin-bottom: 39px;
+    }
+    &__slogan {
+      margin: 0;
+      margin-bottom: 52px;
+    }
   }
 }
 
@@ -448,14 +642,12 @@ a {
         transition-duration: 0.3s;
       }
     }
-
     &:hover,
     &:focus {
       & span::after {
         background: url("../img/icon-right-arrow-verylong.svg") left center no-repeat;
       }
     }
-
     &:active {
       opacity: 0.3;
 
@@ -464,11 +656,102 @@ a {
       }
     }
   }
+
+
+  @media screen and (min-width: $tablet) {
+    &__container {
+      display: flex;
+      flex-wrap: wrap;
+
+      & > * + * {
+        margin-top: 30px;
+      }
+    }
+    &__title {
+      font-size: 36px;
+      line-height: 36px;
+      margin: 0;
+      margin-bottom: 24px;
+    }
+    &__text {
+      max-width: 59%;
+      margin-bottom: 45px;
+    }
+    &__item {
+      background-color: $basic-gray;
+      padding-left: 52px;
+      padding-bottom: 60px;
+      padding-top: 77px;
+      background-repeat: no-repeat;
+      background-origin: content-box;
+      flex-grow: 1;
+
+      &_lose-weight {
+        background-image: url("../img/lose-weight_bg.svg");
+        background-origin: content-box;
+        padding-right: 62px;
+        background-size: 200px 211px;
+        background-position: center right;
+      }
+
+      &_get-fat {
+        background-image: url("../img/get-fat_bg.svg");
+        background-origin: content-box;
+        background-size: 268px 200px;
+        padding-right: 28px;
+        background-position: center right;
+      }
+
+    }
+    &__link {
+      padding: 0;
+      border: none;
+      display: inline-block;
+      font-size: 20px;
+      line-height: 20px;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    &__container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      & > * + * {
+        margin: 0;
+        margin-left: 80px;
+      }
+    }
+    &__title {
+      margin-left: 162px;
+      margin-top: 36px;
+      margin-bottom: 73px;
+    }
+    &__item {
+      flex-basis: 570px;
+      padding: 41px 52px 55px 52px;
+      min-height: 374px;
+      &_lose-weight {
+        background-origin: content-box;
+        background-size: 100px 106px;
+        background-position: top left;
+      }
+      &_get-fat {
+        background-origin: content-box;
+        background-size: 134px 100px;
+        background-position: top left;
+      }
+
+    }
+    &__text {
+      max-width: 100%;
+      margin-bottom: 23px;
+    }
+  }
 }
 
 
 .how-it-works {
-  margin-bottom: 42px;
+
 
   &__title {
     line-height: 40px;
@@ -476,10 +759,10 @@ a {
   }
 
   &__item {
+    grid-column: 1/-1;
     &:not(:last-of-type) {
       margin-bottom: 20px;
     }
-
     padding-left: 80px;
     background-origin: padding-box;
 
@@ -516,6 +799,74 @@ a {
     min-height: 60px;
     display: flex;
     align-items: center;
+  }
+  @media (min-width: $tablet) {
+    @include unpadding(true);
+    @include border-bottom(#e6e6e6);
+    padding-bottom: 59px;
+    &__title {
+      margin-bottom: 72px;
+    }
+    &__list {
+      grid-row-gap: 37px;
+      grid-auto-flow: row;
+      grid-auto-rows: 1fr;
+    }
+    &__text {
+      max-width: 75%;
+      color: $special-dark-gray;
+    }
+    &__item {
+      grid-column: auto / span 2;
+      min-width: 247px;
+      height: 227px;
+      padding: 0;
+      &:not(:last-of-type) {
+        margin-bottom: 0;
+      }
+      &:nth-of-type(1) {
+        background-image: url("../img/advantage-leaf@1x.png"), linear-gradient(to right, $basic-green 0%, $basic-green 100%), url("data:image/svg+xml,%3Csvg width='71' height='227' viewBox='0 0 71 227' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40.3722 227V39.4C40.1855 39.5867 38.0389 40.1467 33.9322 41.08C30.0122 42.0133 25.5322 42.9467 20.4922 43.88C15.4522 44.8133 10.9722 45.6533 7.05219 46.4C3.13219 47.1467 1.07885 47.52 0.892188 47.52V24.84C4.06552 24.0933 7.70552 23.0667 11.8122 21.76C16.1055 20.4533 20.3989 18.8667 24.6922 17C29.1722 15.1333 33.3722 12.8 37.2922 9.99999C41.3989 7.19999 44.8522 3.93332 47.6522 0.199983H70.3322V227H40.3722Z' fill='%23F2F2F2'/%3E%3C/svg%3E%0A");;
+        background-repeat: no-repeat;
+        background-position: 15px 15px, left top, 130px top;
+        background-size: 50px 50px, 80px 80px, 66px 227px;
+      }
+
+      &:nth-of-type(2) {
+        background-image: url("../img/advantage-powder@1x.png"), linear-gradient(to right, $basic-green 0%, $basic-green 100%), url("data:image/svg+xml,%3Csvg width='113' height='229' viewBox='0 0 113 229' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.624532 229V207.72L58.3045 117.84C62.5979 111.12 66.5179 104.867 70.0645 99.08C73.7979 93.2933 76.7845 87.2267 79.0245 80.88C81.4512 74.3467 82.6645 66.88 82.6645 58.48C82.6645 48.0267 80.9845 39.8133 77.6245 33.84C74.2645 27.8667 68.3845 24.88 59.9845 24.88C52.8912 24.88 47.3845 26.84 43.4645 30.76C39.5445 34.68 36.8379 39.8133 35.3445 46.16C33.8512 52.5067 33.1045 59.32 33.1045 66.6V74.16H3.14453V66.32C3.14453 52.6933 4.91787 41.0267 8.46453 31.32C12.1979 21.4267 18.0779 13.7733 26.1045 8.35999C34.3179 2.94666 45.1445 0.239991 58.5845 0.239991C76.8779 0.239991 90.5045 5.46666 99.4645 15.92C108.425 26.1867 112.905 40.4667 112.905 58.76C112.905 68.4667 111.691 76.96 109.265 84.24C107.025 91.52 104.038 98.3333 100.305 104.68C96.5712 111.027 92.4645 117.56 87.9845 124.28L35.9045 203.8H107.585V229H0.624532Z' fill='%23F2F2F2'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-position: 15px 15px, left top, 130px top;
+        background-size: 50px 50px, 80px 80px, 108px 227px;
+      }
+
+      &:nth-of-type(3) {
+        background-image: url("../img/advantage-dining@1x.png"), linear-gradient(to right, $basic-green 0%, $basic-green 100%), url("data:image/svg+xml,%3Csvg width='112' height='232' viewBox='0 0 112 232' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M55.9213 231.52C43.6013 231.52 33.3346 229.187 25.1213 224.52C16.9079 219.853 10.7479 213.133 6.64125 204.36C2.53458 195.587 0.481251 185.227 0.481251 173.28V165.72H30.1613C30.1613 166.467 30.1613 167.307 30.1613 168.24C30.1613 168.987 30.1613 169.827 30.1613 170.76C30.3479 177.48 31.0946 183.547 32.4013 188.96C33.8946 194.373 36.4146 198.667 39.9613 201.84C43.6946 205.013 49.0146 206.6 55.9213 206.6C63.2013 206.6 68.7079 204.92 72.4413 201.56C76.1746 198.013 78.6946 193.067 80.0013 186.72C81.3079 180.373 81.9613 173.093 81.9613 164.88C81.9613 152.933 79.7213 143.227 75.2413 135.76C70.9479 128.107 63.2946 123.907 52.2813 123.16C51.7213 122.973 50.9746 122.88 50.0413 122.88C49.2946 122.88 48.6413 122.88 48.0813 122.88V92.92C48.6413 92.92 49.2946 92.92 50.0413 92.92C50.7879 92.92 51.4413 92.92 52.0013 92.92C62.6413 92.5467 70.2946 89.7467 74.9613 84.52C79.6279 79.2933 81.9613 70.6133 81.9613 58.48C81.9613 48.2133 80.1879 40 76.6413 33.84C73.2813 27.68 66.4679 24.6 56.2013 24.6C45.9346 24.6 39.1213 28.0533 35.7613 34.96C32.4013 41.68 30.5346 50.36 30.1613 61C30.1613 61.7467 30.1613 62.5867 30.1613 63.52C30.1613 64.2667 30.1613 65.0133 30.1613 65.76H0.481251V58.2C0.481251 46.0667 2.53458 35.7067 6.64125 27.12C10.7479 18.5333 16.9079 11.9067 25.1213 7.23998C33.5213 2.57332 43.8813 0.239991 56.2013 0.239991C68.7079 0.239991 79.0679 2.57332 87.2813 7.23998C95.4946 11.9067 101.655 18.6267 105.761 27.4C109.868 35.9867 111.921 46.3467 111.921 58.48C111.921 72.1067 108.935 83.0267 102.961 91.24C97.1746 99.4533 89.3346 105.053 79.4413 108.04C86.3479 110.093 92.1346 113.64 96.8013 118.68C101.655 123.72 105.388 130.16 108.001 138C110.615 145.653 111.921 154.613 111.921 164.88C111.921 178.32 110.055 190.08 106.321 200.16C102.588 210.053 96.6146 217.8 88.4013 223.4C80.1879 228.813 69.3613 231.52 55.9213 231.52Z' fill='%23F2F2F2'/%3E%3C/svg%3E ");
+        background-repeat: no-repeat;
+        background-position: 15px 15px, left top, 130px top;
+        background-size: 50px 50px, 80px 80px, 112px 227px;
+      }
+
+      &:nth-of-type(4) {
+        background-image: url("../img/advantage-clock@1x.png"), linear-gradient(to right, $basic-green 0%, $basic-green 100%), url("data:image/svg+xml,%3Csvg width='121' height='227' viewBox='0 0 121 227' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M66.3242 227V166.24H0.52422V134.88L59.6042 0.199983H94.8842V139.64H120.364V166.24H94.8842V227H66.3242ZM29.3642 139.64H66.3242V36.6L29.3642 139.64Z' fill='%23F2F2F2'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat, no-repeat;
+        background-position: 15px 15px, left top, 130px top;
+        background-size: 50px 50px, 80px 80px, 120px 227px;
+      }
+
+    }
+    &__text {
+      margin: 0;
+      margin-top: 111px;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    padding-bottom: 0;
+    border: none;
+    &__item {
+      grid-column: auto / span 1;
+    }
+    &__text {
+      max-width: 82%;
+    }
   }
 }
 
@@ -555,7 +906,6 @@ a {
   }
 
   &__item-title {
-    box-sizing: border-box;
     position: absolute;
     top: 45px;
     background-color: #eaeaea;
@@ -592,6 +942,9 @@ a {
     transition-duration: 0.4s;
     object-fit: contain;
     margin: 0 auto;
+    width: 100%;
+    height: auto;
+    max-width: 400px;
 
     &_active {
       display: block;
@@ -601,14 +954,17 @@ a {
 
   &__toggles {
     margin: 0 auto;
-
     @extend .content-center;
-    gap: 17px;
+
+    & > * + * {
+      margin-left: 17px;
+    }
   }
 
   &__toggle {
     font-family: inherit;
-    font-weight: inherit;
+    color: black;
+    font-weight: normal;
     font-size: 16px;
     line-height: 20px;
     text-transform: uppercase;
@@ -645,28 +1001,245 @@ a {
       margin-left: auto;
     }
   }
+
+  @media screen and (min-width: $tablet) {
+    background: none;
+    padding-top: 0;
+    padding-bottom: 64px;
+    background-image: linear-gradient(to bottom, white 0%, white 55.5%, #EAEAEA 55.5%, #EAEAEA 100%);
+    &__title {
+      margin-bottom: 63px;
+    }
+    &__text {
+      margin-bottom: 54px;
+      color: $special-dark-gray;
+    }
+    &__statistic {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 64px;
+    }
+    &__items-highlighted {
+      width: 400px;
+      margin: 0;
+      justify-content: flex-start;
+
+      & > * + * {
+        margin-left: 42px;
+      }
+    }
+    &__goal-price {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: flex-end;
+      font-size: 20px;
+      line-height: 20px;
+      margin: 0;
+    }
+    &__item-highlighted {
+      box-sizing: border-box;
+      flex-basis: 162px;
+      min-height: 77px;
+    }
+    &__item-value {
+      font-size: 30px;
+      line-height: 37px;
+    }
+    &__item-title {
+      font-size: 14px;
+      line-height: 14px;
+      top: 68px;
+      width: auto;
+      background-color: white;
+      padding: 0 7px;
+    }
+    &__img-container {
+      position: relative;
+      max-width: 708px;
+      min-height: 517px;
+      margin: 0;
+      margin: 0 auto;
+      padding: 0;
+    }
+    &__slide {
+      display: block;
+      opacity: 100%;
+      position: absolute;
+      object-fit: cover;
+      height: 100%;
+      top: 0;
+
+      &_before {
+        left: 0;
+        object-position: left center;
+        width: 50%
+      }
+
+      &_after {
+        right: 0;
+        object-position: right center;
+        width: 50%;
+      }
+    }
+    &__toggles {
+      & > * + * {
+        margin-left: 26px;
+      }
+    }
+    &__toggle {
+      font-size: 20px;
+      line-height: 20px;
+      padding: 0;
+      padding-bottom: 6px;
+      border-bottom: 1px dotted $special-gray;
+      opacity: 100%;
+      transition-duration: 0.3s;
+      cursor: unset;
+      pointer-events: unset;
+      &:hover, &:focus {
+        border-bottom: 1px solid $special-gray-2;
+      }
+      &:active {
+        padding-bottom: 7px;
+        border: none;
+      }
+    }
+
+    &__slider-stripe {
+      box-sizing: border-box;
+      width: 428px;
+      height: 6px;
+      border: none;
+      border-radius: 6px;
+      background-color: #dcdcdc;
+      padding: 3px 5px;
+      position: relative;
+    }
+
+    &__slider-inner-stripe {
+      position: absolute;
+      top: -14px;
+      left: calc(50% - 17px);
+      width: 34px;
+      height: 34px;
+      padding: 12px;
+      background: none;
+      background-image: radial-gradient( $basic-green 0%, $basic-green 25%, white 26%, white 100%);
+      border: 1px solid $special-gray;
+      background-origin: border-box;
+      background-clip: border-box;
+      border-radius: 50%;
+      transition: all 0.4s;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.16);
+      &:hover {
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.19);
+      }
+      &:active {
+        border-color: $basic-green;
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+  }
+  @media screen and (min-width: $desktop){
+    background-image: linear-gradient(to top, $basic-gray 0%, $basic-gray 77.2%, white 77.2%, white 100%);
+    padding-top: 58px;
+    padding-bottom: 67px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3,min-content);
+
+
+    &__title {
+      margin-bottom: 146px;
+      padding: 0;
+    }
+    &__text {
+      margin-bottom: 69px;
+      max-width: 436px;
+    }
+    &__title, &__text, &__statistic {
+      grid-column: 1/2;
+
+    }
+    &__slider {
+      grid-column: 2 / 3;
+      grid-row: 1 / -1;
+    }
+
+    &__statistic {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 0;
+    }
+    &__items-highlighted {
+      & > * + * {
+        margin-left: 42px;
+      }
+      margin-bottom: 55px;
+    }
+    &__item-title {
+      background-color: $basic-gray;
+    }
+    &__goal-price {
+      flex-direction: row-reverse;
+      gap: 0;
+      text-align: left;
+      justify-content: flex-end;
+      margin-bottom: 8px;
+      & > * + * {
+        margin-right: 63px;
+      }
+    }
+    &__img-container {
+      min-width: 708px;
+      margin-bottom: 73px;
+    }
+    &__slide {
+      &_before {
+        width: 52%;
+      }
+      &_after {
+        width: 48%;
+      }
+    }
+  }
 }
+
 
 .page-footer {
   &__map {
     @include unpadding();
   }
-
+  @media screen and (min-width: $desktop) {
+    position: relative;
+  }
   &__metadata {
     @include unpadding(true);
   }
 
   &__partnership {
-    @include unpadding(true);
+      @media screen and (max-width: $desktop - 1){
+        @include unpadding(true);
+      }
+      @media screen and (min-width: $desktop) {
+        position: absolute;
+        top: 95px;
+        left: 110px;
+      }
   }
 }
 
 .partnership {
+  color: #111111;
   min-height: 114px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 18px;
+
 
   &__title {
     text-transform: uppercase;
@@ -679,21 +1252,80 @@ a {
     font-size: 14px;
     line-height: 20px;
     color: $special-dark-gray;
+    br {
+      display: none;
+    }
+
+
   }
 
   &_inner-page {
     background-color: $basic-gray;
+  }
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1){
+    padding-left: 71px;
+    padding-right: 71px;
+  }
+  @media screen and (min-width: $tablet){
+    min-height: 201px;
+    padding-top: 41px;
+    padding-bottom: 41px;
+    align-items: center;
+    &__title {
+      font-size: 20px;
+      line-height: 21px;
+      margin: 0;
+      max-width: 171px;
+    }
+    &__address {
+      font-family: "Arial", serif;
+      font-size: 16px;
+      line-height: 19px;
+      color: $special-dark-gray;
+      text-align: right;
+      display: flex;
+      justify-content: flex-end;
+      br {
+        display: unset;
+      }
+
+    }
+  }
+  @media screen and (min-width: $desktop){
+    width: 570px;
+    min-height: 201px;
+    background-color: white;
+    padding: 66px 89px 51px 76px;
+    &__title {
+      align-self: flex-start;
+    }
   }
 }
 
 .map {
   &__img {
     display: block;
-    box-sizing: border-box;
     width: 100%;
     max-width: 500px;
     height: auto;
     margin: 0 auto;
+  }
+  @media screen and (min-width: $tablet){
+    &__img {
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+      max-width: 800px;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    &__img {
+      width: 100%;
+      height: 100%;
+      max-height: 400px;
+      max-width: 1920px;
+    }
   }
 }
 
@@ -729,8 +1361,33 @@ a {
     padding-left: 73px;
     padding-right: 75px;
     margin: 0 auto;
-
     @include metadata-border;
+  }
+
+  @media screen and (min-width: $tablet) {
+
+    &__container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 150px;
+    }
+    &__socials {
+      flex-basis: 123px;
+      padding: 0;
+      border: none;
+    }
+    &__logo {
+      display: block;
+      padding: 0;
+      border: 0;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    &__socials {
+      flex-basis: 130px;
+    }
   }
 }
 
@@ -753,7 +1410,11 @@ a {
     &_vk {
       width: 28px;
       height: 22px;
+      @media screen and (min-width: $tablet) {
+        svg {
 
+        }
+      }
       &:hover svg path,
       &:focus svg path {
         fill: $basic-green;
@@ -781,6 +1442,7 @@ a {
       }
     }
   }
+
 }
 
 .developer {
@@ -806,6 +1468,17 @@ a {
       opacity: 0.3;
     }
   }
+  @media screen and (min-width: $tablet) {
+    font-size: 16px;
+    line-height: 18px;
+    padding: 0;
+    margin: 0;
+    &__link {
+      & > * + * {
+        margin-left: 22px;
+      }
+    }
+  }
 }
 
 //catalog
@@ -813,56 +1486,83 @@ a {
 .catalog {
   padding-top: 27px;
   padding-bottom: 35px;
-
+  display: block;
   &__title {
     line-height: 36px;
     padding-bottom: 35px;
     border-bottom: 1px solid $basic-gray-2;
-
-    @include unpadding(true);
-  }
-}
-
-.products {
-  &_main {
-    .products__product {
+    @media screen and (max-width: $tablet - 1){
       @include unpadding(true);
     }
   }
 
-  &_additional {
-    padding-top: 28px;
-
-    &__title {
-      font-size: 24px;
-      line-height: 24px;
-      display: block;
-      padding-bottom: 34px;
-
-      @include border-bottom($special-gray);
+  &__products {
+    margin-bottom: 28px;
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 68px;
     }
 
-    &__promo {
-      margin-top: 39px;
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 76px;
     }
   }
+
+  @media screen and (min-width: $tablet) {
+    padding-top: 65px;
+    padding-bottom: 75px;
+    &__title {
+      margin-bottom: 83px;
+      border: none;
+      padding: 0;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    padding-top: 75px;
+    padding-bottom: 86px;
+  }
+  }
+
+.products {
 
   &__product {
     grid-column: 1/-1;
+    @media screen and (min-width: $tablet) {
+      grid-column: auto / span 2;
+    }
+    @media screen and (min-width: $desktop) {
+      grid-column: auto / span 1;
+    }
   }
-}
+  &__list {
+    @media (min-width: $tablet) {
+      grid-row-gap: 59px;
+    }
+    @media screen and (min-width: $desktop){
+      grid-row-gap: 63px;
+    }
 
+  }
+
+}
 .product {
+
   padding-bottom: 25px;
   padding-top: 20px;
 
-  @include border-bottom($basic-gray-2);
+  @media screen and (max-width: $tablet - 1) {
+    @include border-bottom($basic-gray-2);
+  }
+  @media screen and (max-width: $tablet - 1){
+    @include unpadding(true);
+  }
+
   display: grid;
   grid-template-areas: "img title"
     "img desc"
     "btn btn";
   grid-template-columns: 1fr 1fr;
   grid-template-rows: min-content min-content min-content;
+
 
   &__title {
     grid-area: title;
@@ -881,11 +1581,6 @@ a {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-end;
-    font-family: "Arial", serif;
-    font-size: 12px;
-    line-height: 16px;
-    color: $special-dark-gray;
-
     & dt,
     & dd {
       flex-basis: 50%;
@@ -903,7 +1598,10 @@ a {
     height: auto;
     align-self: center;
     justify-self: center;
+    width: 100%;
+    height: auto;
     margin: -16px 0;
+      max-width: 212px;
   }
 
   &__button {
@@ -923,33 +1621,234 @@ a {
     padding-top: 75px;
     display: grid;
   }
-
-  &_additional {
-    padding-bottom: 18px;
-    padding-top: 13px;
-    grid-template-areas: none;
-    grid-template-rows: min-content min-content min-content;
-
-    .product__title,
-    .product__features,
-    .product__button {
-      grid-column: 1/-1;
+  &__text {
+    font-family: "Arial", serif;
+    font-size: 12px;
+    line-height: 16px;
+    color: $special-dark-gray;
+  }
+  @media screen and (min-width: $tablet) {
+    background-image: linear-gradient(to top, $basic-gray 0%, $basic-gray 84.1%, white 84.1%, white 100%);
+    padding: 0;
+    margin: 0;
+    padding-bottom: 40px;
+    display: grid;
+    grid-template-areas:
+    "img img"
+    "title title"
+    "desc desc"
+    "btn btn";
+    grid-template-rows: 234px min-content 1fr min-content;
+    &__text {
+      font-size: 16px;
+      line-height: 18px;
     }
-
-    .product__title {
+    &__button {
+      min-height: 39px;
+      font-size: 16px;
+      line-height: 20px;
+      padding: 9px;
+      margin: 0;
+      margin-left: 37px;
+      margin-right: 37px;
+      width: auto;
+    }
+    &__title {
+      font-size: 20px;
+      line-height: 24px;
+      text-align: center;
+      margin-bottom: 16px;
+      max-width: 136px;
+      justify-self: center;
+      & br {
+        display: none;
+      }
+    }
+    &__features {
+      margin-bottom: 33px;
+      margin-left: 36.5px;
+      margin-right: 36.5px;
       font-size: 16px;
       line-height: 16px;
-      grid-row: 1 / 2;
-      margin-bottom: 10px;
+      & > * {
+        padding-top: 9px;
+        padding-bottom: 9px;
+        border-bottom: 1px solid $special-gray;
+      }
+    }
+    &__image {
+      grid-area: img;
+      width: 100%;
+      height: auto;
+      max-height: auto;
+      max-width: 350px;
+      justify-self: center;
+      align-self: end;
+      margin: 0 -36px;
+      object-fit: cover;
+      margin-bottom: 22px;
+    }
+    &_show-all {
+      border: 2px solid $basic-gray;
+      background-image: url("../img/icon-plus-mobile.svg");
+      background-position: center 52px;
+      background-repeat: no-repeat;
+      background-size: 60px;
+      height: 439px;
+      align-self: end;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-top: 161px;
+      .product__title {
+        margin: 0 auto;
+        margin-bottom: 23px;
+
+      }
+      .product__text {
+        max-width: 167px;
+        margin: 0 auto;
+      }
+    }
+  }
+  @media screen and (min-width: $desktop) {
+
+  }
+}
+
+.products-additional {
+
+  &__container {
+    @media screen and (max-width: $desktop - 1) {
+      display: block;
+    }
+    @media screen and (min-width: $desktop) {
+      display: grid
+    }
+  }
+  &__title {
+    font-size: 24px;
+    line-height: 24px;
+    @media screen and (max-width: $tablet - 1){
+      padding-bottom: 35px;
+      @include border-bottom($special-gray);
     }
 
-    .product__features {
-      grid-row: 2 / 3;
-      margin-bottom: 12px;
+    @media screen and (min-width: $tablet){
+      font-size: 36px;
+      line-height: 36px;
+      margin-bottom: 80px;
+    }
+  }
+  &__list {
+    margin-bottom: 39px;
+    @media screen  and  (max-height: $tablet - 1){
+      @include unpadding(true);
     }
 
-    .product__button {
-      grid-row: 3 / 4;
+    @media screen and (min-width: $tablet){
+      gap: 0;
+      border: 1px solid $special-gray;
+      border-bottom: none;
+      margin-bottom: 69px;
+    }
+
+    @media screen and (min-width: $desktop){
+      grid-column: 1 / 4;
+      border: none;
+      border-top: 1px solid $special-gray;
+      margin: 0;
+    }
+  }
+
+  &__promo {
+    @media screen and (min-width: $desktop){
+      grid-column: 4 / 5;
+    }
+  }
+}
+.product-additional {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 18px;
+  padding-top: 13px;
+
+  grid-template-areas: "title title"
+                       "desc desc"
+                        "btn btn";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content 1fr min-content;
+
+  &__title {
+    grid-area: title;
+    margin-bottom: 13px;
+  }
+
+  &__features {
+    grid-area: desc;
+    font-size: 14px;
+    align-self: center;
+    margin: 0;
+  }
+
+  &__button {
+    grid-area: btn;
+  }
+
+  @media screen and (min-width: $tablet) {
+    grid-column: 1 / -1;
+    border-bottom: 1px solid $special-gray;
+    background: none;
+    padding: 26px 38px 28px;
+    display: grid;
+    grid-row-gap: 23px;
+    grid-template-areas: "title desc"
+                          "btn btn";
+    grid-template-columns: 1fr 230px;
+    grid-template-rows: 1fr min-content;
+    min-height: 138px;
+    &__title {
+      justify-self: start;
+      align-self: start;
+      margin: 0;
+    }
+    &__features {
+      align-self: center;
+      margin: 0;
+      > * {
+        border: none;
+        padding: 0;
+      }
+      & dd{
+        flex-basis: 58%;
+        flex-grow: 1;
+        text-align: right;
+      }
+      & dt{
+        flex-basis: 42%;
+        flex-grow: 1;
+      }
+    }
+    &__button {
+      margin: 0;
+    }
+  }
+  @media screen and (min-width: $desktop){
+    display: flex;
+    min-height: 72px;
+    padding: 15px 0;
+    align-items: center;
+    justify-content: space-between;
+    &__title {
+      margin-right: auto;
+      align-self: center;
+    }
+    &__features {
+      margin-right: 40px;
+      flex-basis: 290px;
+    }
+    &__button {
+      flex-basis: 245px;
     }
   }
 }
@@ -986,7 +1885,44 @@ a {
     align-self: end;
     margin-bottom: 43px;
   }
+
+  @media screen and (min-width: $tablet){
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    background-image: url("../img/gift-photo-tablet@1x.jpg");
+    min-height: 200px;
+    &__icon {
+      grid-column: 1 / 2;
+      margin: 0;
+      align-self: center;
+    }
+    &__text {
+      grid-column: 2 / 3;
+      text-align: left;
+      padding-left: 73px;
+      align-self: center;
+      margin: 0;
+      grid-row: 1/-1;
+    }
+  }
+
+  @media screen and (min-width: $desktop){
+    background-image: url("../img/gift-photo-desktop@1x.jpg");
+    height: 289px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__text {
+      padding: 0;
+      text-align: center;
+      margin-top: 46px;
+    }
+  }
 }
+
+
 // form
 .page-main_form {
   padding-top: 27px;
@@ -1000,6 +1936,30 @@ a {
     text-transform: uppercase;
     margin-bottom: 39px;
   }
+
+  @media screen and (min-width: $tablet) {
+    padding-top: 65px;
+    padding-bottom: 72px;
+
+    &__title {
+      margin-bottom: 50px;
+    }
+
+    &__subtitle {
+      margin-bottom: 66px;
+      font-size: 20px;
+      line-height: 30px;
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    &__subtitle {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
 }
 
 
@@ -1008,70 +1968,140 @@ a {
   &__fieldset-title {
     font-size: 24px;
     line-height: 26px;
+
+    @media screen and (min-width: $tablet){
+      font-size: 36px;
+      line-height: 36px;
+    }
   }
   &__cat-info, &__program-select {
     grid-column: 1/-1;
   }
   &__cat-info {
+    @media screen and (max-width: $tablet - 1) {
+      @include unpadding(true);
+    }
+    @media screen and (min-width: $tablet){
+      margin-bottom: 72px;
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+    @media screen and (min-width: $desktop) {
+      grid-column: 1 / 3;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
 
   }
   &__program-select {
-
     margin-bottom: 26px;
+
+    @media screen and (max-width: $tablet - 1) {
+      @include unpadding(true);
+    }
+    @media screen and (min-width: $tablet){
+      margin-bottom: 70px;
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+    @media screen and (min-width: $desktop) {
+      grid-column: 3 / 5;
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 
   &__owner-info {
     grid-column: 1/-1;
     margin-bottom: 27px;
+
+    @media screen and (min-width: $tablet){
+      margin-bottom: 65px;
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
   &__comment {
     grid-column: 1/-1;
     margin-bottom: 27px;
+
+    @media screen and (min-width: $tablet){
+      margin-left: 40px;
+      margin-right: 40px;
+      margin-bottom: 65px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
   &__additional {
     grid-column: 1/-1;
     margin-bottom: 34px;
+
+    @media screen and (min-width: $tablet){
+      margin-left: 40px;
+      margin-right: 40px;
+      margin-bottom: 54px
+    }
+    @media screen and (min-width: $desktop) {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
+
   &__button {
     grid-column: 1/-1;
     margin-bottom: 21px;
+
+    @media screen and (min-width: $tablet){
+      margin-bottom: 0;
+      margin-left: 41px;
+      grid-column: 1 / 3;
+      max-width: 282px;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      min-height: 52px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin-left: 0;
+      grid-column: 1 / 3;
+      max-width: none;
+    }
   }
   &__required-notify {
     grid-column: 1/-1;
     text-align: center;
     font-family: "Arial", serif;
     font-size: 14px;
-    line-height: 16px;;
+    line-height: 16px;
+
+    @media screen and (min-width: $tablet){
+      text-align: left;
+      font-size: 16px;
+      line-height: 16px;
+      grid-column: 3 / 5;
+      align-self: center;
+    }
   }
 }
 
 .cat-info-fieldset {
-  @include unpadding(true);
-  @include border-bottom(#D9D9D9);
   padding-bottom: 24px;
-}
-.program-select-fieldset{
-  padding-top: 20px;
-  padding-bottom: 24px;
-  @include unpadding(true);
-  @include border-bottom(#D9D9D9);
-}
-.owner-info-fieldset{
-  &__title {
-    margin-bottom: 32px;
+  @media screen and (max-width: $tablet - 1) {
+    @include border-bottom(#D9D9D9);
   }
-}
-.comment-fieldset{
-  &__title {
-    margin-bottom: 34px;
-  }
-}
-.additional-fieldset{
-  &__title {
-    margin-bottom: 34px;
-  }
-}
 
+
+}
 .fieldset-grid {
   display: flex;
   flex-direction: column;
@@ -1079,8 +2109,84 @@ a {
 
   & > * + * {
     margin-top: 14px;
+    @media screen and (min-width: $tablet){
+      margin-top: 20px;
+    }
   }
 }
+.program-select-fieldset{
+  @media screen and (max-width: $tablet - 1) {
+    @include border-bottom(#D9D9D9);
+    padding-top: 20px;
+    padding-bottom: 24px;
+  }
+  @media screen and (min-width: $tablet){
+    border: 1px solid #E7E7E7;
+    padding: 24px 27px;
+  }
+  @media screen and (min-width: $desktop) {
+    &__list {
+      & > * + * {
+        margin-top: 13px;
+      }
+    }
+  }
+
+}
+.owner-info-fieldset{
+  &__title {
+    margin-bottom: 32px;
+
+    @media screen and (min-width: $tablet){
+      margin-bottom: 76px;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    &__list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 80px;
+      & > * + * {
+        margin: 0;
+      }
+    }
+  }
+}
+.comment-fieldset{
+  &__title {
+    margin-bottom: 34px;
+    @media screen and (min-width: $tablet){
+      margin-bottom: 76px;
+    }
+  }
+}
+.additional-fieldset{
+  &__title {
+    margin-bottom: 34px;
+
+    @media screen and (min-width: $tablet){
+      margin-bottom: 57px;
+    }
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-row-gap: 13px;
+    grid-column-gap: 15px;
+    @media screen and (min-width: $tablet){
+      grid-row-gap: 32px;
+      grid-column-gap: 123px;
+    }
+    @media screen and (min-width: $desktop){
+      grid-column-gap: 104px;
+    }
+  }
+
+}
+
+
+
 .input-field {
   font-size: 16px;
   line-height: 18px;
@@ -1088,18 +2194,36 @@ a {
   color: $special-dark-gray;
   position: relative;
 
-  & > * + * {
-    margin-left: 14px;
+  @media screen and (min-width: $tablet){
+    font-size: 20px;
+    line-height: 30px;
   }
 
+  & > * + * {
+    margin-left: 14px;
+    @media screen and (min-width: $tablet){
+      margin-left: 10px;
+    }
+  }
+
+  &__icon {
+    path {
+      stroke: #FF8282;
+    }
+  }
   &__email {
     position: absolute;
     right: 15px;
+    @media screen and (min-width: $tablet){
+      right: 19px;
+    }
   }
-
   &__phone {
     position: absolute;
     right: 13px;
+    @media screen and (min-width: $tablet){
+      right: 17px;
+    }
   }
 
   &_text-input {
@@ -1114,10 +2238,12 @@ a {
       color: $special-dark-gray;
       flex-grow: 1;
       border: 1px solid #E7E7E7;
+      border-radius: 0;
       height: 45px;
       padding: 0;
       padding-left: 14px;
       padding-right: 14px;
+      -moz-appearance: textfield;
 
       &:hover {
         border: 1px solid $special-gray;
@@ -1129,6 +2255,11 @@ a {
 
       &:invalid {
         border: 2px solid #FF8282;
+        .input-field__icon {
+
+        }
+
+
       }
 
       &::placeholder {
@@ -1140,6 +2271,7 @@ a {
         padding: 0;
       }
 
+
       &::-webkit-inner-spin-button,
       &::-webkit-outer-spin-button {
         -webkit-appearance: none;
@@ -1147,13 +2279,35 @@ a {
       }
     }
 
-    &_has-image {
+    &_has-icon {
       input {
         padding-right: 35px;
       }
     }
 
+    @media screen and (min-width: $tablet){
+      input {
+        font-size: 20px;
+        line-height: 30px;
+        height: 52px;
+        padding-left: 17px;
+        padding-right: 17px;
+
+        &::placeholder {
+          line-height: 50px;
+        }
+      }
+
+      &_has-icon {
+        input {
+          padding-right: 40px;
+        }
+      }
+
+
+    }
   }
+
   &_radio {
     color: $special-dark-gray-2;
     height: 30px;
@@ -1162,6 +2316,12 @@ a {
     padding-left: 45px;
     position: relative;
     transition-duration: 0.4s;
+
+    @media screen and (min-width: $tablet){
+      padding-left: 60px;
+      height: 40px;
+    }
+
     &:hover, &:focus {
       .input-field_radio__text::before {
         border-color: #BABABA;
@@ -1170,6 +2330,7 @@ a {
     &:active {
       opacity: 0.3;
     }
+
     &__text::before {
       content: "";
       position: absolute;
@@ -1183,12 +2344,20 @@ a {
       left: 0;
       top: 0;
       transition: background-color 0.4s;
+
+      @media screen and (min-width: $tablet){
+        width: 40px;
+        height: 40px;
+      }
     }
+
+
     input:checked + &__text::before {
       background-color: $basic-green;
 
     }
-  }
+    }
+
   &_text-area {
     & textarea {
       width: 100%;
@@ -1199,15 +2368,26 @@ a {
       min-height: 150px;
       font-family: inherit;
 
+      @media screen and (min-width: $tablet){
+        padding: 18px;
+        min-height: 174px;
+      }
+
       &::placeholder {
         font-family: "Oswald", serif;
         text-transform: uppercase;
         color: $special-dark-gray;
         font-size: 16px;
         line-height: 18px;
+
+        @media screen and (min-width: $tablet){
+          font-size: 20px;
+          line-height: 30px;
+        }
       }
     }
   }
+
   &_checkbox {
     color: $special-dark-gray-2;
     padding-left: 45px;
@@ -1216,6 +2396,12 @@ a {
     padding-left: 45px;
     transition-duration: 0.4s;
     height: 30px;
+
+    @media screen and (min-width: $tablet){
+      height: 40px;
+      padding-left: 60px;
+    }
+
     &__text::before {
       content: "";
       position: absolute;
@@ -1225,6 +2411,11 @@ a {
       left: 0;
       top: 0;
       transition: background 0.4s;
+
+      @media screen and (min-width: $tablet){
+        width: 40px;
+        height: 40px;
+      }
     }
     &:hover, &:focus {
       .input-field_checkbox__text::before {
@@ -1241,5 +2432,4 @@ a {
       background-size: 18px 14px;
     }
   }
-
 }
