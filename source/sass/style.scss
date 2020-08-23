@@ -363,8 +363,8 @@ a {
 
     &__site-nav {
       max-width: 480px;
-      margin-bottom: 5px;
-      margin-right: 15px;
+      margin-bottom: 0px;
+      margin-right: 0px;
     }
 
 
@@ -591,7 +591,7 @@ a {
     &__can-img {
       position: absolute;
       top: 141px;
-      right: 236px;
+      right: 220px;
       width: 552px;
       height: 499px;
     }
@@ -850,7 +850,7 @@ a {
     display: flex;
     align-items: center;
   }
-  @media (min-width: $tablet)   {
+  @media (min-width: $tablet){
     @include unpadding(true);
     @include border-bottom(#e6e6e6);
     padding-bottom: 59px;
@@ -917,13 +917,13 @@ a {
     &__item {
       grid-column: auto / span 1;
       &:nth-of-type(2) {
-        margin-left: -5px;
+        margin-left: -2px;
       }
       &:nth-of-type(3) {
-        margin-left: -9px;
+        margin-left: -2.5px;
       }
       &:nth-of-type(4) {
-        margin-left: -14px;
+        margin-left: -2px;
       }
     }
     &__text {
@@ -1220,11 +1220,11 @@ a {
 
     &__title {
       margin-top: 57px;
-      margin-bottom: 120px;
+      margin-bottom: 146px;
       padding: 0;
     }
     &__text {
-      margin-bottom: 40px;
+      margin-bottom: 67px;
       max-width: 436px;
     }
     &__title, &__text, &__statistic {
@@ -1235,7 +1235,6 @@ a {
       grid-column: 2 / 3;
       grid-row: 1 / -1;
       justify-self: end;
-
     }
 
     &__statistic {
@@ -1267,6 +1266,7 @@ a {
     &__img-container {
       min-width: 708px;
       margin-bottom: 45px;
+      margin-right: -20px;
     }
     &__slide {
       &_before {
@@ -1280,8 +1280,8 @@ a {
     }
     &__toggles {
       max-width: 576.5px;
-      margin-left: auto;
-      margin-right: 20px;
+      /*margin-left: auto;*/
+      margin-right: 0px;
     }
   }
 }
@@ -1382,6 +1382,10 @@ a {
     &__title {
       align-self: flex-start;
     }
+    &__address {
+      text-align: left;
+      margin-top: -12px;
+    }
   }
 }
 
@@ -1471,6 +1475,8 @@ a {
   @media screen and (min-width: $desktop) {
     &__socials {
       flex-basis: 130px;
+      margin-top: -5px;
+      padding-left: 10px;
     }
   }
 }
@@ -1610,7 +1616,7 @@ a {
     }
   }
   @media screen and (min-width: $desktop) {
-    padding-top: 75px;
+    padding-top: 72px;
     padding-bottom: 86px;
   }
   }
@@ -1818,7 +1824,18 @@ a {
     }
   }
   @media screen and (min-width: $desktop) {
-
+    &__title {
+      line-height: 22px;
+      &_show-all {
+        margin-bottom: 24px;
+      }
+    }
+    &__features {
+      margin-top: 14px;
+    }
+    &_show-all {
+      padding-top: 160px;
+    }
   }
 }
 
@@ -1846,6 +1863,10 @@ a {
       margin-bottom: 80px;
       margin-left: 38px;
     }
+    @media screen and (min-width: $desktop){
+      margin-left: 0;
+      margin-bottom: 82px ;
+    }
   }
   &__list {
     margin-bottom: 35px;
@@ -1865,6 +1886,7 @@ a {
       border: none;
       border-top: 1px solid $special-gray;
       margin: 0;
+      padding: 0;
     }
   }
 
@@ -1893,7 +1915,6 @@ a {
 
   &__features {
     grid-area: desc;
-    font-size: 14px;
     align-self: center;
     margin: 0;
   }
@@ -1954,6 +1975,12 @@ a {
     &__features {
       margin-right: 40px;
       flex-basis: 290px;
+      align-self: center;
+      padding-top: 10px;
+      padding-left: 4px;
+      & > dd {
+        text-align: left;
+      }
     }
     &__button {
       flex-basis: 245px;
@@ -2037,7 +2064,12 @@ a {
     &__text {
       padding: 0;
       text-align: center;
+      margin: 0;
       margin-top: 46px;
+      margin-bottom: -17px;
+    }
+    &__icon {
+      margin-left: 0;
     }
   }
 }
@@ -2075,6 +2107,7 @@ a {
   }
   @media screen and (min-width: $desktop) {
     padding-top: 70px;
+    padding-bottom: 84px;
     &__subtitle {
       margin-left: 0;
       margin-right: 0;
@@ -2170,7 +2203,7 @@ a {
     @media screen and (min-width: $tablet){
       margin-left: 40px;
       margin-right: 40px;
-      margin-bottom: 54px
+      margin-bottom: 60px
     }
     @media screen and (min-width: $desktop) {
       margin-left: 0;
@@ -2300,7 +2333,7 @@ a {
       grid-column-gap: 60px;
     }
     @media screen and (min-width: $desktop){
-      grid-column-gap: 104px;
+      grid-column-gap: 80px;
     }
   }
 
