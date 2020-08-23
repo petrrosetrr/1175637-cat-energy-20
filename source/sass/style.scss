@@ -1870,7 +1870,7 @@ a {
   }
   &__list {
     margin-bottom: 35px;
-    @media screen  and  (max-height: $tablet - 1){
+    @media screen  and  (max-width: $tablet - 1){
       @include unpadding(true);
     }
 
@@ -2329,6 +2329,7 @@ a {
     grid-row-gap: 13px;
     grid-column-gap: 15px;
     @media screen and (min-width: $tablet){
+
       grid-row-gap: 32px;
       grid-column-gap: 60px;
     }
