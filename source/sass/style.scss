@@ -363,8 +363,8 @@ a {
 
     &__site-nav {
       max-width: 480px;
-      margin-bottom: 5px;
-      margin-right: 15px;
+      margin-bottom: 0px;
+      margin-right: 0px;
     }
 
 
@@ -499,6 +499,9 @@ a {
 .select-program {
   background-color: white;
   background-image: url("../img/index-background-mobile@1x.jpg");
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/index-background-mobile@2x.jpg");
+  }
   background-repeat: no-repeat;
   background-position: top center;
   background-size: 100% auto;
@@ -574,6 +577,9 @@ a {
     z-index: 1;
     margin-top: -117px;
     background-image: url("../img/index-background-desktop@1x.jpg");
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/index-background-desktop@2x.jpg");
+    }
     background-repeat: no-repeat;
     background-position: right top;
     background-size: 720px 696px;
@@ -585,7 +591,7 @@ a {
     &__can-img {
       position: absolute;
       top: 141px;
-      right: 236px;
+      right: 220px;
       width: 552px;
       height: 499px;
     }
@@ -811,31 +817,31 @@ a {
     background-origin: padding-box;
 
     &:nth-of-type(1) {
-      background-image: url("../img/advantage-leaf@1x.png"), linear-gradient(to right, $basic-green 0%, $basic-green 100%);
+      background-image: url("../img/advantage-leaf.svg"), linear-gradient(to right, $basic-green 0%, $basic-green 100%);
       background-repeat: no-repeat, no-repeat;
-      background-position: 5px 5px, left top;
-      background-size: 50px 50px, 60px 60px;
+      background-position: 15px 13.5px, left top;
+      background-size: 30px 32px, 60px 60px;
     }
 
     &:nth-of-type(2) {
-      background-image: url("../img/advantage-powder@1x.png"), linear-gradient(to right, $basic-green 0%, $basic-green 100%);
+      background-image: url("../img/advantage-powder.svg"), linear-gradient(to right, $basic-green 0%, $basic-green 100%);
       background-repeat: no-repeat, no-repeat;
-      background-position: 5px 5px, left top;
-      background-size: 50px 50px, 60px 60px;
+      background-position: 15px 13px, left top;
+      background-size: 29px 31px, 60px 60px;
     }
 
     &:nth-of-type(3) {
-      background-image: url("../img/advantage-dining@1x.png"), linear-gradient(to right, $basic-green 0%, $basic-green 100%);
+      background-image: url("../img/advantage-dining.svg"), linear-gradient(to right, $basic-green 0%, $basic-green 100%);
       background-repeat: no-repeat, no-repeat;
-      background-position: 5px 5px, left top;
-      background-size: 50px 50px, 60px 60px;
+      background-position: 17px 15px, left top;
+      background-size: 23px 30px, 60px 60px;
     }
 
     &:nth-of-type(4) {
-      background-image: url("../img/advantage-clock@1x.png"), linear-gradient(to right, $basic-green 0%, $basic-green 100%);
+      background-image: url("../img/advantage-clock.svg"), linear-gradient(to right, $basic-green 0%, $basic-green 100%);
       background-repeat: no-repeat, no-repeat;
-      background-position: 5px 5px, left top;
-      background-size: 50px 50px, 60px 60px;
+      background-position: 17px 15px, left top;
+      background-size: 25px 30px, 60px 60px;
     }
   }
 
@@ -844,7 +850,7 @@ a {
     display: flex;
     align-items: center;
   }
-  @media (min-width: $tablet)   {
+  @media (min-width: $tablet){
     @include unpadding(true);
     @include border-bottom(#e6e6e6);
     padding-bottom: 59px;
@@ -869,31 +875,31 @@ a {
         margin-bottom: 0;
       }
       &:nth-of-type(1) {
-        background-image: url("../img/advantage-leaf@1x.png"), linear-gradient(to right, $basic-green 0%, $basic-green 100%), url("data:image/svg+xml,%3Csvg width='71' height='227' viewBox='0 0 71 227' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40.3722 227V39.4C40.1855 39.5867 38.0389 40.1467 33.9322 41.08C30.0122 42.0133 25.5322 42.9467 20.4922 43.88C15.4522 44.8133 10.9722 45.6533 7.05219 46.4C3.13219 47.1467 1.07885 47.52 0.892188 47.52V24.84C4.06552 24.0933 7.70552 23.0667 11.8122 21.76C16.1055 20.4533 20.3989 18.8667 24.6922 17C29.1722 15.1333 33.3722 12.8 37.2922 9.99999C41.3989 7.19999 44.8522 3.93332 47.6522 0.199983H70.3322V227H40.3722Z' fill='%23F2F2F2'/%3E%3C/svg%3E%0A");;
+        background-image: url("../img/advantage-leaf.svg"), linear-gradient(to right, $basic-green 0%, $basic-green 100%), url("data:image/svg+xml,%3Csvg width='71' height='227' viewBox='0 0 71 227' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40.3722 227V39.4C40.1855 39.5867 38.0389 40.1467 33.9322 41.08C30.0122 42.0133 25.5322 42.9467 20.4922 43.88C15.4522 44.8133 10.9722 45.6533 7.05219 46.4C3.13219 47.1467 1.07885 47.52 0.892188 47.52V24.84C4.06552 24.0933 7.70552 23.0667 11.8122 21.76C16.1055 20.4533 20.3989 18.8667 24.6922 17C29.1722 15.1333 33.3722 12.8 37.2922 9.99999C41.3989 7.19999 44.8522 3.93332 47.6522 0.199983H70.3322V227H40.3722Z' fill='%23F2F2F2'/%3E%3C/svg%3E%0A");;
         background-repeat: no-repeat;
-        background-position: 15px 15px, left top, 125px top;
-        background-size: 50px 50px, 80px 80px, 71px 227px;
+        background-position: 24px 25px, left top, 125px top;
+        background-size: 30px 32px, 80px 80px, 71px 227px;
       }
 
       &:nth-of-type(2) {
-        background-image: url("../img/advantage-powder@1x.png"), linear-gradient(to right, $basic-green 0%, $basic-green 100%), url("data:image/svg+xml,%3Csvg width='113' height='229' viewBox='0 0 113 229' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.624532 229V207.72L58.3045 117.84C62.5979 111.12 66.5179 104.867 70.0645 99.08C73.7979 93.2933 76.7845 87.2267 79.0245 80.88C81.4512 74.3467 82.6645 66.88 82.6645 58.48C82.6645 48.0267 80.9845 39.8133 77.6245 33.84C74.2645 27.8667 68.3845 24.88 59.9845 24.88C52.8912 24.88 47.3845 26.84 43.4645 30.76C39.5445 34.68 36.8379 39.8133 35.3445 46.16C33.8512 52.5067 33.1045 59.32 33.1045 66.6V74.16H3.14453V66.32C3.14453 52.6933 4.91787 41.0267 8.46453 31.32C12.1979 21.4267 18.0779 13.7733 26.1045 8.35999C34.3179 2.94666 45.1445 0.239991 58.5845 0.239991C76.8779 0.239991 90.5045 5.46666 99.4645 15.92C108.425 26.1867 112.905 40.4667 112.905 58.76C112.905 68.4667 111.691 76.96 109.265 84.24C107.025 91.52 104.038 98.3333 100.305 104.68C96.5712 111.027 92.4645 117.56 87.9845 124.28L35.9045 203.8H107.585V229H0.624532Z' fill='%23F2F2F2'/%3E%3C/svg%3E%0A");
+        background-image: url("../img/advantage-powder.svg"), linear-gradient(to right, $basic-green 0%, $basic-green 100%), url("data:image/svg+xml,%3Csvg width='113' height='229' viewBox='0 0 113 229' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.624532 229V207.72L58.3045 117.84C62.5979 111.12 66.5179 104.867 70.0645 99.08C73.7979 93.2933 76.7845 87.2267 79.0245 80.88C81.4512 74.3467 82.6645 66.88 82.6645 58.48C82.6645 48.0267 80.9845 39.8133 77.6245 33.84C74.2645 27.8667 68.3845 24.88 59.9845 24.88C52.8912 24.88 47.3845 26.84 43.4645 30.76C39.5445 34.68 36.8379 39.8133 35.3445 46.16C33.8512 52.5067 33.1045 59.32 33.1045 66.6V74.16H3.14453V66.32C3.14453 52.6933 4.91787 41.0267 8.46453 31.32C12.1979 21.4267 18.0779 13.7733 26.1045 8.35999C34.3179 2.94666 45.1445 0.239991 58.5845 0.239991C76.8779 0.239991 90.5045 5.46666 99.4645 15.92C108.425 26.1867 112.905 40.4667 112.905 58.76C112.905 68.4667 111.691 76.96 109.265 84.24C107.025 91.52 104.038 98.3333 100.305 104.68C96.5712 111.027 92.4645 117.56 87.9845 124.28L35.9045 203.8H107.585V229H0.624532Z' fill='%23F2F2F2'/%3E%3C/svg%3E%0A");
         background-repeat: no-repeat;
-        background-position: 15px 15px, left top, 122px top;
-        background-size: 50px 50px, 80px 80px, 113px 229px;
+        background-position: 25px 24px, left top, 122px top;
+        background-size: 29px 31px, 80px 80px, 113px 229px;
       }
 
       &:nth-of-type(3) {
-        background-image: url("../img/advantage-dining@1x.png"), linear-gradient(to right, $basic-green 0%, $basic-green 100%), url("data:image/svg+xml,%3Csvg width='112' height='232' viewBox='0 0 112 232' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M55.9213 231.52C43.6013 231.52 33.3346 229.187 25.1213 224.52C16.9079 219.853 10.7479 213.133 6.64125 204.36C2.53458 195.587 0.481251 185.227 0.481251 173.28V165.72H30.1613C30.1613 166.467 30.1613 167.307 30.1613 168.24C30.1613 168.987 30.1613 169.827 30.1613 170.76C30.3479 177.48 31.0946 183.547 32.4013 188.96C33.8946 194.373 36.4146 198.667 39.9613 201.84C43.6946 205.013 49.0146 206.6 55.9213 206.6C63.2013 206.6 68.7079 204.92 72.4413 201.56C76.1746 198.013 78.6946 193.067 80.0013 186.72C81.3079 180.373 81.9613 173.093 81.9613 164.88C81.9613 152.933 79.7213 143.227 75.2413 135.76C70.9479 128.107 63.2946 123.907 52.2813 123.16C51.7213 122.973 50.9746 122.88 50.0413 122.88C49.2946 122.88 48.6413 122.88 48.0813 122.88V92.92C48.6413 92.92 49.2946 92.92 50.0413 92.92C50.7879 92.92 51.4413 92.92 52.0013 92.92C62.6413 92.5467 70.2946 89.7467 74.9613 84.52C79.6279 79.2933 81.9613 70.6133 81.9613 58.48C81.9613 48.2133 80.1879 40 76.6413 33.84C73.2813 27.68 66.4679 24.6 56.2013 24.6C45.9346 24.6 39.1213 28.0533 35.7613 34.96C32.4013 41.68 30.5346 50.36 30.1613 61C30.1613 61.7467 30.1613 62.5867 30.1613 63.52C30.1613 64.2667 30.1613 65.0133 30.1613 65.76H0.481251V58.2C0.481251 46.0667 2.53458 35.7067 6.64125 27.12C10.7479 18.5333 16.9079 11.9067 25.1213 7.23998C33.5213 2.57332 43.8813 0.239991 56.2013 0.239991C68.7079 0.239991 79.0679 2.57332 87.2813 7.23998C95.4946 11.9067 101.655 18.6267 105.761 27.4C109.868 35.9867 111.921 46.3467 111.921 58.48C111.921 72.1067 108.935 83.0267 102.961 91.24C97.1746 99.4533 89.3346 105.053 79.4413 108.04C86.3479 110.093 92.1346 113.64 96.8013 118.68C101.655 123.72 105.388 130.16 108.001 138C110.615 145.653 111.921 154.613 111.921 164.88C111.921 178.32 110.055 190.08 106.321 200.16C102.588 210.053 96.6146 217.8 88.4013 223.4C80.1879 228.813 69.3613 231.52 55.9213 231.52Z' fill='%23F2F2F2'/%3E%3C/svg%3E ");
+        background-image: url("../img/advantage-dining.svg"), linear-gradient(to right, $basic-green 0%, $basic-green 100%), url("data:image/svg+xml,%3Csvg width='112' height='232' viewBox='0 0 112 232' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M55.9213 231.52C43.6013 231.52 33.3346 229.187 25.1213 224.52C16.9079 219.853 10.7479 213.133 6.64125 204.36C2.53458 195.587 0.481251 185.227 0.481251 173.28V165.72H30.1613C30.1613 166.467 30.1613 167.307 30.1613 168.24C30.1613 168.987 30.1613 169.827 30.1613 170.76C30.3479 177.48 31.0946 183.547 32.4013 188.96C33.8946 194.373 36.4146 198.667 39.9613 201.84C43.6946 205.013 49.0146 206.6 55.9213 206.6C63.2013 206.6 68.7079 204.92 72.4413 201.56C76.1746 198.013 78.6946 193.067 80.0013 186.72C81.3079 180.373 81.9613 173.093 81.9613 164.88C81.9613 152.933 79.7213 143.227 75.2413 135.76C70.9479 128.107 63.2946 123.907 52.2813 123.16C51.7213 122.973 50.9746 122.88 50.0413 122.88C49.2946 122.88 48.6413 122.88 48.0813 122.88V92.92C48.6413 92.92 49.2946 92.92 50.0413 92.92C50.7879 92.92 51.4413 92.92 52.0013 92.92C62.6413 92.5467 70.2946 89.7467 74.9613 84.52C79.6279 79.2933 81.9613 70.6133 81.9613 58.48C81.9613 48.2133 80.1879 40 76.6413 33.84C73.2813 27.68 66.4679 24.6 56.2013 24.6C45.9346 24.6 39.1213 28.0533 35.7613 34.96C32.4013 41.68 30.5346 50.36 30.1613 61C30.1613 61.7467 30.1613 62.5867 30.1613 63.52C30.1613 64.2667 30.1613 65.0133 30.1613 65.76H0.481251V58.2C0.481251 46.0667 2.53458 35.7067 6.64125 27.12C10.7479 18.5333 16.9079 11.9067 25.1213 7.23998C33.5213 2.57332 43.8813 0.239991 56.2013 0.239991C68.7079 0.239991 79.0679 2.57332 87.2813 7.23998C95.4946 11.9067 101.655 18.6267 105.761 27.4C109.868 35.9867 111.921 46.3467 111.921 58.48C111.921 72.1067 108.935 83.0267 102.961 91.24C97.1746 99.4533 89.3346 105.053 79.4413 108.04C86.3479 110.093 92.1346 113.64 96.8013 118.68C101.655 123.72 105.388 130.16 108.001 138C110.615 145.653 111.921 154.613 111.921 164.88C111.921 178.32 110.055 190.08 106.321 200.16C102.588 210.053 96.6146 217.8 88.4013 223.4C80.1879 228.813 69.3613 231.52 55.9213 231.52Z' fill='%23F2F2F2'/%3E%3C/svg%3E ");
         background-repeat: no-repeat;
-        background-position: 15px 15px, left top, 125px top;
-        background-size: 50px 50px, 80px 80px, 112px 232px;
+        background-position: 28px 25px, left top, 125px top;
+        background-size: 23px 30px, 80px 80px, 112px 232px;
       }
 
       &:nth-of-type(4) {
-        background-image: url("../img/advantage-clock@1x.png"), linear-gradient(to right, $basic-green 0%, $basic-green 100%), url("data:image/svg+xml,%3Csvg width='121' height='227' viewBox='0 0 121 227' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M66.3242 227V166.24H0.52422V134.88L59.6042 0.199983H94.8842V139.64H120.364V166.24H94.8842V227H66.3242ZM29.3642 139.64H66.3242V36.6L29.3642 139.64Z' fill='%23F2F2F2'/%3E%3C/svg%3E%0A");
+        background-image: url("../img/advantage-clock.svg"), linear-gradient(to right, $basic-green 0%, $basic-green 100%), url("data:image/svg+xml,%3Csvg width='121' height='227' viewBox='0 0 121 227' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M66.3242 227V166.24H0.52422V134.88L59.6042 0.199983H94.8842V139.64H120.364V166.24H94.8842V227H66.3242ZM29.3642 139.64H66.3242V36.6L29.3642 139.64Z' fill='%23F2F2F2'/%3E%3C/svg%3E%0A");
         background-repeat: no-repeat, no-repeat;
-        background-position: 15px 15px, left top, 123px top;
-        background-size: 50px 50px, 80px 80px, 121px 227px;
+        background-position: 27.5px 24px, left top, 123px top;
+        background-size: 25px 30px, 80px 80px, 121px 227px;
       }
 
     }
@@ -911,13 +917,13 @@ a {
     &__item {
       grid-column: auto / span 1;
       &:nth-of-type(2) {
-        margin-left: -5px;
+        margin-left: -2px;
       }
       &:nth-of-type(3) {
-        margin-left: -9px;
+        margin-left: -2.5px;
       }
       &:nth-of-type(4) {
-        margin-left: -14px;
+        margin-left: -2px;
       }
     }
     &__text {
@@ -1214,11 +1220,11 @@ a {
 
     &__title {
       margin-top: 57px;
-      margin-bottom: 120px;
+      margin-bottom: 146px;
       padding: 0;
     }
     &__text {
-      margin-bottom: 40px;
+      margin-bottom: 67px;
       max-width: 436px;
     }
     &__title, &__text, &__statistic {
@@ -1229,7 +1235,6 @@ a {
       grid-column: 2 / 3;
       grid-row: 1 / -1;
       justify-self: end;
-
     }
 
     &__statistic {
@@ -1261,6 +1266,7 @@ a {
     &__img-container {
       min-width: 708px;
       margin-bottom: 45px;
+      margin-right: -20px;
     }
     &__slide {
       &_before {
@@ -1274,8 +1280,8 @@ a {
     }
     &__toggles {
       max-width: 576.5px;
-      margin-left: auto;
-      margin-right: 20px;
+      /*margin-left: auto;*/
+      margin-right: 0px;
     }
   }
 }
@@ -1376,6 +1382,10 @@ a {
     &__title {
       align-self: flex-start;
     }
+    &__address {
+      text-align: left;
+      margin-top: -12px;
+    }
   }
 }
 
@@ -1386,17 +1396,23 @@ a {
     margin: 0 auto;
     height: 362px;
     background: url("../img/bg-map-mobile@1x.png") no-repeat;
+    @media (min-resolution: 2dppx){
+      background-image: url("../img/bg-map-mobile@2x.png");
+    }
   }
   @media screen and (min-width: $tablet){
     &__y-map {
       height: 400px;
       background: url("../img/bg-map-tablet@1x.png") no-repeat;
+      @media (min-resolution: 2dppx){
+        background-image: url("../img/bg-map-tablet@2x.png");
+      }
     }
   }
 
   @media screen and (min-width: $desktop) {
-    &__img {
-      background: url("../img/bg-map-desktop@1x.png") no-repeat;
+    &__y-map {
+      background-image: url("../img/bg-map-desktop@2x.png");
     }
   }
 }
@@ -1459,6 +1475,8 @@ a {
   @media screen and (min-width: $desktop) {
     &__socials {
       flex-basis: 130px;
+      margin-top: -5px;
+      padding-left: 10px;
     }
   }
 }
@@ -1569,7 +1587,7 @@ a {
   display: block;
   &__title {
     line-height: 36px;
-    padding-bottom: 35px;
+    padding-bottom: 40px;
     border-bottom: 1px solid $basic-gray-2;
     @media screen and (max-width: $tablet - 1){
       @include unpadding(true);
@@ -1588,16 +1606,17 @@ a {
   }
 
   @media screen and (min-width: $tablet) {
-    padding-top: 65px;
+    padding-top: 60px;
     padding-bottom: 75px;
     &__title {
+      line-height: 60px;
       margin-bottom: 83px;
       border: none;
       padding: 0;
     }
   }
   @media screen and (min-width: $desktop) {
-    padding-top: 75px;
+    padding-top: 72px;
     padding-bottom: 86px;
   }
   }
@@ -1626,11 +1645,11 @@ a {
 }
 .product {
 
-  padding-bottom: 25px;
+  padding-bottom: 24px;
   padding-top: 20px;
 
   @media screen and (max-width: $tablet - 1) {
-    @include border-bottom($basic-gray-2);
+    @include border-bottom($special-gray);
   }
   @media screen and (max-width: $tablet - 1){
     @include unpadding(true);
@@ -1643,19 +1662,21 @@ a {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: min-content min-content min-content;
 
-
   &__title {
     grid-area: title;
     text-transform: uppercase;
     font-size: 16px;
     line-height: 20px;
     color: $special-dark-gray-2;
+    &_show-all {
+      margin-bottom: 8px;
+    }
   }
 
   &__features {
     grid-area: desc;
-    align-self: center;
-    margin-bottom: 10px;
+    align-self: end;
+    margin-bottom: 8px;
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: wrap;
@@ -1674,19 +1695,25 @@ a {
 
   &__image {
     grid-area: img;
-    width: 100%;
-    height: auto;
     align-self: center;
     justify-self: center;
+    margin: 0 auto;
+    margin-top: -16px;
+    margin-bottom: -16px;
     width: 100%;
-    height: auto;
-    margin: -16px 0;
-      max-width: 212px;
+    max-width: 212px;
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 
   &__button {
-    margin-top: 13px;
+    margin-top: 12px;
     grid-area: btn;
+    &_show-all {
+      margin-top: 21px;
+    }
   }
 
   &_show-all {
@@ -1698,7 +1725,7 @@ a {
     background-position: center 26px;
     background-repeat: no-repeat;
     text-align: center;
-    padding-top: 75px;
+    padding-top: 79px;
     display: grid;
   }
   &__text {
@@ -1729,7 +1756,7 @@ a {
       line-height: 20px;
       padding: 9px;
       margin: 0;
-      margin-left: 37px;
+      margin-left: 39px;
       margin-right: 37px;
       width: auto;
     }
@@ -1737,7 +1764,8 @@ a {
       font-size: 20px;
       line-height: 24px;
       text-align: center;
-      margin-bottom: 16px;
+      margin-bottom: 0px;
+      margin-top: 10px;
       max-width: 136px;
       justify-self: center;
       & br {
@@ -1745,28 +1773,31 @@ a {
       }
     }
     &__features {
-      margin-bottom: 33px;
+      margin-top: 11px;
+      margin-bottom: 30.5px;
       margin-left: 36.5px;
       margin-right: 36.5px;
       font-size: 16px;
       line-height: 16px;
       & > * {
         padding-top: 9px;
-        padding-bottom: 9px;
+        padding-bottom: 7px;
         border-bottom: 1px solid $special-gray;
       }
     }
     &__image {
-      grid-area: img;
+      margin: 0 -36px;
       width: 100%;
-      height: auto;
-      max-height: auto;
       max-width: 350px;
       justify-self: center;
       align-self: end;
-      margin: 0 -36px;
-      object-fit: cover;
       margin-bottom: 22px;
+      img {
+        width: 100%;
+        height: auto;
+        max-width: none;
+        margin: 0 auto;
+      }
     }
     &_show-all {
       border: 2px solid $basic-gray;
@@ -1774,12 +1805,13 @@ a {
       background-position: center 52px;
       background-repeat: no-repeat;
       background-size: 60px;
-      height: 439px;
+      height: 430px;
       align-self: end;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding-top: 161px;
+      padding-top: 157px;
+      padding-bottom: 35px;
       .product__title {
         margin: 0 auto;
         margin-bottom: 23px;
@@ -1792,7 +1824,18 @@ a {
     }
   }
   @media screen and (min-width: $desktop) {
-
+    &__title {
+      line-height: 22px;
+      &_show-all {
+        margin-bottom: 24px;
+      }
+    }
+    &__features {
+      margin-top: 14px;
+    }
+    &_show-all {
+      padding-top: 160px;
+    }
   }
 }
 
@@ -1810,7 +1853,7 @@ a {
     font-size: 24px;
     line-height: 24px;
     @media screen and (max-width: $tablet - 1){
-      padding-bottom: 35px;
+      padding-bottom: 34px;
       @include border-bottom($special-gray);
     }
 
@@ -1818,11 +1861,16 @@ a {
       font-size: 36px;
       line-height: 36px;
       margin-bottom: 80px;
+      margin-left: 38px;
+    }
+    @media screen and (min-width: $desktop){
+      margin-left: 0;
+      margin-bottom: 82px ;
     }
   }
   &__list {
-    margin-bottom: 39px;
-    @media screen  and  (max-height: $tablet - 1){
+    margin-bottom: 35px;
+    @media screen  and  (max-width: $tablet - 1){
       @include unpadding(true);
     }
 
@@ -1838,6 +1886,7 @@ a {
       border: none;
       border-top: 1px solid $special-gray;
       margin: 0;
+      padding: 0;
     }
   }
 
@@ -1851,7 +1900,7 @@ a {
   margin: 0;
   padding: 0;
   padding-bottom: 18px;
-  padding-top: 13px;
+  padding-top: 11px;
 
   grid-template-areas: "title title"
                        "desc desc"
@@ -1861,25 +1910,25 @@ a {
 
   &__title {
     grid-area: title;
-    margin-bottom: 13px;
+    margin-bottom: 10px;
   }
 
   &__features {
     grid-area: desc;
-    font-size: 14px;
     align-self: center;
     margin: 0;
   }
 
   &__button {
     grid-area: btn;
+    margin-top: 14px;
   }
 
   @media screen and (min-width: $tablet) {
     grid-column: 1 / -1;
     border-bottom: 1px solid $special-gray;
     background: none;
-    padding: 26px 38px 28px;
+    padding: 24px 38px 28px;
     display: grid;
     grid-row-gap: 23px;
     grid-template-areas: "title desc"
@@ -1893,7 +1942,7 @@ a {
       margin: 0;
     }
     &__features {
-      align-self: center;
+      align-self: end;
       margin: 0;
       > * {
         border: none;
@@ -1926,6 +1975,12 @@ a {
     &__features {
       margin-right: 40px;
       flex-basis: 290px;
+      align-self: center;
+      padding-top: 10px;
+      padding-left: 4px;
+      & > dd {
+        text-align: left;
+      }
     }
     &__button {
       flex-basis: 245px;
@@ -1942,6 +1997,9 @@ a {
   min-height: 289px;
   background-color: $basic-green;
   background-image: url("../img/gift-photo-mobile@1x.jpg");
+  @media (min-resolution: 2dppx){
+    background-image: url("../img/gift-photo-mobile@2x.jpg");
+  }
   background-repeat: no-repeat;
   background-size: 100% auto;
   text-align: center;
@@ -1971,24 +2029,33 @@ a {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     background-image: url("../img/gift-photo-tablet@1x.jpg");
+    @media (min-resolution: 2dppx){
+      background-image: url("../img/gift-photo-tablet@2x.jpg");
+    }
     min-height: 200px;
     &__icon {
       grid-column: 1 / 2;
       margin: 0;
       align-self: center;
+      justify-self: start;
+      margin-left: 78px;
     }
     &__text {
       grid-column: 2 / 3;
       text-align: left;
-      padding-left: 73px;
       align-self: center;
+      justify-self: start;
       margin: 0;
+      margin-left: 70px;
       grid-row: 1/-1;
     }
   }
 
   @media screen and (min-width: $desktop){
     background-image: url("../img/gift-photo-desktop@1x.jpg");
+    @media (min-resolution: 2dppx){
+      background-image: url("../img/gift-photo-desktop@2x.jpg");
+    }
     height: 289px;
     display: flex;
     flex-direction: column;
@@ -1997,7 +2064,12 @@ a {
     &__text {
       padding: 0;
       text-align: center;
+      margin: 0;
       margin-top: 46px;
+      margin-bottom: -17px;
+    }
+    &__icon {
+      margin-left: 0;
     }
   }
 }
@@ -2035,6 +2107,7 @@ a {
   }
   @media screen and (min-width: $desktop) {
     padding-top: 70px;
+    padding-bottom: 84px;
     &__subtitle {
       margin-left: 0;
       margin-right: 0;
@@ -2130,7 +2203,7 @@ a {
     @media screen and (min-width: $tablet){
       margin-left: 40px;
       margin-right: 40px;
-      margin-bottom: 54px
+      margin-bottom: 60px
     }
     @media screen and (min-width: $desktop) {
       margin-left: 0;
@@ -2256,11 +2329,12 @@ a {
     grid-row-gap: 13px;
     grid-column-gap: 15px;
     @media screen and (min-width: $tablet){
+
       grid-row-gap: 32px;
       grid-column-gap: 60px;
     }
     @media screen and (min-width: $desktop){
-      grid-column-gap: 104px;
+      grid-column-gap: 80px;
     }
   }
 
