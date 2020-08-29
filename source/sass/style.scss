@@ -571,7 +571,7 @@ a {
     }
   }
   @media screen and (min-width: $desktop){
-    @include unpadding(true)
+    @include unpadding(true);
     min-height: 696px;
     position: relative;
     z-index: 1;
