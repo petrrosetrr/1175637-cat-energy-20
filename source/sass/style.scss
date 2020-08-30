@@ -8,12 +8,14 @@
   src: url("../fonts/oswaldregular.woff2"), url("../fonts/oswaldregular.woff");
   font-display: swap;
 }
+
 @font-face {
   font-family: "Oswald";
   font-weight: 500;
   src: url("../fonts/oswaldmedium.woff2"), url("../fonts/oswaldmedium.woff");
   font-display: swap;
 }
+
 @font-face {
   font-family: "Arial";
   src: local("Arial"), url("../fonts/Arial.woff2"), url("../fonts/Arial.woff");
@@ -154,7 +156,7 @@ a {
 .title {
   font-size: 36px;
   font-weight: normal;
-  @media screen and (min-width: $tablet){
+  @media screen and (min-width: $tablet) {
     font-size: 60px;
   }
 }
@@ -192,6 +194,7 @@ a {
   &_show-all {
     background-color: $basic-gray;
     color: $special-dark-gray;
+
     &:hover,
     &:focus {
       background: $basic-gray-2;
@@ -202,7 +205,7 @@ a {
     }
   }
 
-  @media screen and (min-width: $tablet){
+  @media screen and (min-width: $tablet) {
     min-height: 54px;
     font-size: 20px;
     line-height: 20px;
@@ -239,10 +242,12 @@ a {
   @media (max-width: $tablet - 1px) {
     @include unpadding();
   }
+
   &_close {
     height: 66px;
     overflow: hidden;
   }
+
   &__static {
     display: flex;
     justify-content: space-between;
@@ -255,6 +260,7 @@ a {
     @extend .content-center;
     @include border-bottom(#E6E6E6);
   }
+
   &__img-logo,
   &__text-logo {
 
@@ -267,10 +273,12 @@ a {
       opacity: 0.6;
     }
   }
+
   &__text-logo {
     margin-top: 5px;
     margin-left: -9px;
   }
+
   &__toggle {
     height: 18px;
     margin-top: 4px;
@@ -321,12 +329,14 @@ a {
       }
     }
   }
+
   &_index {
-    @media screen and (min-width: $desktop){
+    @media screen and (min-width: $desktop) {
       position: relative;
       z-index: 2;
     }
   }
+
   @media screen and (min-width: $tablet) {
     padding-top: 24px;
     min-height: 80px;
@@ -352,13 +362,13 @@ a {
     &__static {
       margin-right: 95px;
     }
-    &__site-nav{
+    &__site-nav {
       flex-basis: 440px;
       flex-grow: 1;
       max-width: 500px;
     }
   }
-  @media screen and (min-width: $desktop){
+  @media screen and (min-width: $desktop) {
     padding-top: 48px;
     min-height: 107px;
 
@@ -418,6 +428,7 @@ a {
       }
     }
   }
+
   @media screen and (min-width: $tablet) {
 
     &__list {
@@ -436,14 +447,16 @@ a {
       font-weight: 400;
       font-size: 18px;
       line-height: 24px;
+
       &_active span::after {
         bottom: -9px;
       }
 
     }
   }
+
   &_index {
-    @media screen and (min-width: $desktop){
+    @media screen and (min-width: $desktop) {
       color: white;
       .site-nav__link_active {
         span::after {
@@ -452,6 +465,7 @@ a {
       }
     }
   }
+
   @media screen and (min-width: $desktop) {
     &__link {
       font-size: 20px;
@@ -466,11 +480,11 @@ a {
   &__programs-list {
     margin-top: 22px;
     margin-bottom: 30px;
-    @media screen and (min-width: $tablet){
+    @media screen and (min-width: $tablet) {
       margin-top: 0;
       margin-bottom: 53px;
     }
-    @media screen and (min-width: $desktop){
+    @media screen and (min-width: $desktop) {
       margin-top: 0;
       margin-bottom: 80px;
     }
@@ -485,9 +499,10 @@ a {
     }
 
   }
+
   &__how-it-works {
     margin-bottom: 42px;
-    @media screen and (min-width: $desktop){
+    @media screen and (min-width: $desktop) {
       margin-bottom: 0px;
     }
   }
@@ -571,7 +586,7 @@ a {
       left: 82px;
     }
   }
-  @media screen and (min-width: $desktop){
+  @media screen and (min-width: $desktop) {
     @include unpadding(true);
     min-height: 696px;
     position: relative;
@@ -683,12 +698,14 @@ a {
         transition-duration: 0.3s;
       }
     }
+
     &:hover,
     &:focus {
       & span::after {
         background: url("../img/icon-right-arrow-verylong.svg") left center no-repeat;
       }
     }
+
     &:active {
       opacity: 0.3;
 
@@ -737,12 +754,13 @@ a {
       background-origin: content-box;
       flex-grow: 1;
       min-height: 372px;
+
       &_lose-weight {
         background-image: url("../img/lose-weight_bg.svg");
         background-origin: content-box;
         padding-right: 62px;
         background-size: 200px 211px;
-        background-position: top 2px  right;
+        background-position: top 2px right;
       }
 
       &_get-fat {
@@ -767,6 +785,7 @@ a {
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
+
       & > * + * {
         margin: 0;
         margin-left: 80px;
@@ -781,11 +800,13 @@ a {
       width: calc(50% - 40px);
       padding: 41px 52px 65px 52px;
       min-height: 374px;
+
       &_lose-weight {
         background-origin: content-box;
         background-size: 100px 106px;
         background-position: top left;
       }
+
       &_get-fat {
         background-origin: padding-box;
         background-size: 134px 100px;
@@ -811,9 +832,11 @@ a {
 
   &__item {
     grid-column: 1/-1;
+
     &:not(:last-of-type) {
       margin-bottom: 20px;
     }
+
     padding-left: 80px;
     background-origin: padding-box;
 
@@ -851,7 +874,8 @@ a {
     display: flex;
     align-items: center;
   }
-  @media (min-width: $tablet){
+
+  @media (min-width: $tablet) {
     @include unpadding(true);
     @include border-bottom(#e6e6e6);
     padding-bottom: 59px;
@@ -872,9 +896,11 @@ a {
       min-width: 247px;
       height: 227px;
       padding: 0;
+
       &:not(:last-of-type) {
         margin-bottom: 0;
       }
+
       &:nth-of-type(1) {
         background-image: url("../img/advantage-leaf.svg"), linear-gradient(to right, $basic-green 0%, $basic-green 100%), url("data:image/svg+xml,%3Csvg width='71' height='227' viewBox='0 0 71 227' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40.3722 227V39.4C40.1855 39.5867 38.0389 40.1467 33.9322 41.08C30.0122 42.0133 25.5322 42.9467 20.4922 43.88C15.4522 44.8133 10.9722 45.6533 7.05219 46.4C3.13219 47.1467 1.07885 47.52 0.892188 47.52V24.84C4.06552 24.0933 7.70552 23.0667 11.8122 21.76C16.1055 20.4533 20.3989 18.8667 24.6922 17C29.1722 15.1333 33.3722 12.8 37.2922 9.99999C41.3989 7.19999 44.8522 3.93332 47.6522 0.199983H70.3322V227H40.3722Z' fill='%23F2F2F2'/%3E%3C/svg%3E%0A");;
         background-repeat: no-repeat;
@@ -917,12 +943,15 @@ a {
     }
     &__item {
       grid-column: auto / span 1;
+
       &:nth-of-type(2) {
         margin-left: -2px;
       }
+
       &:nth-of-type(3) {
         margin-left: -2.5px;
       }
+
       &:nth-of-type(4) {
         margin-left: -2px;
       }
@@ -1140,7 +1169,7 @@ a {
       &_before {
         left: 20px;
         object-position: left center;
-        width: calc( 50% - 20px);
+        width: calc(50% - 20px);
       }
 
       &_after {
@@ -1164,9 +1193,11 @@ a {
       transition-duration: 0.3s;
       cursor: unset;
       pointer-events: unset;
+
       &:hover, &:focus {
         border-bottom: 1px solid $special-gray-2;
       }
+
       &:active {
         padding-bottom: 7px;
         border: none;
@@ -1193,16 +1224,18 @@ a {
       height: 34px;
       padding: 12px;
       background: none;
-      background-image: radial-gradient( $basic-green 0%, $basic-green 25%, white 26%, white 100%);
+      background-image: radial-gradient($basic-green 0%, $basic-green 25%, white 26%, white 100%);
       border: 1px solid $special-gray;
       background-origin: border-box;
       background-clip: border-box;
       border-radius: 50%;
       transition: all 0.4s;
       box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.16);
+
       &:hover {
         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.19);
       }
+
       &:active {
         border-color: $basic-green;
         box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
@@ -1210,13 +1243,13 @@ a {
     }
 
   }
-  @media screen and (min-width: $desktop){
+  @media screen and (min-width: $desktop) {
     background-image: linear-gradient(to top, $basic-gray 0%, $basic-gray 68%, white 68%, white 100%);
     padding-top: 25px;
     padding-bottom: 67px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(3,min-content);
+    grid-template-rows: repeat(3, min-content);
 
 
     &__title {
@@ -1249,6 +1282,7 @@ a {
       & > * + * {
         margin-left: 42px;
       }
+
       margin-bottom: 55px;
     }
     &__item-title {
@@ -1260,6 +1294,7 @@ a {
       text-align: left;
       justify-content: flex-end;
       margin-bottom: 8px;
+
       & > * + * {
         margin-right: 63px;
       }
@@ -1274,6 +1309,7 @@ a {
         left: 40px;
         width: 53%;
       }
+
       &_after {
         right: -24px;
         width: 47%;
@@ -1292,22 +1328,24 @@ a {
   &__map {
     @include unpadding();
   }
+
   @media screen and (min-width: $desktop) {
     position: relative;
   }
+
   &__metadata {
     @include unpadding(true);
   }
 
   &__partnership {
-      @media screen and (max-width: $desktop - 1){
-        @include unpadding(true);
-      }
-      @media screen and (min-width: $desktop) {
-        position: absolute;
-        top: 95px;
-        left: 0px;
-      }
+    @media screen and (max-width: $desktop - 1) {
+      @include unpadding(true);
+    }
+    @media screen and (min-width: $desktop) {
+      position: absolute;
+      top: 95px;
+      left: 0px;
+    }
   }
 }
 
@@ -1333,6 +1371,7 @@ a {
     line-height: 20px;
     color: $special-dark-gray;
     width: 50%;
+
     br {
       display: none;
     }
@@ -1342,15 +1381,16 @@ a {
 
   &_inner-page {
     background-color: $basic-gray;
-    @media screen and (max-width: $tablet - 1){
+    @media screen and (max-width: $tablet - 1) {
       padding-top: 28px;
     }
   }
-  @media screen and (min-width: $tablet) and (max-width: $desktop - 1){
+
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1) {
     padding-left: 71px;
     padding-right: 71px;
   }
-  @media screen and (min-width: $tablet){
+  @media screen and (min-width: $tablet) {
     min-height: 201px;
     padding-top: 49px;
     padding-bottom: 41px;
@@ -1369,13 +1409,14 @@ a {
       text-align: right;
       display: flex;
       justify-content: flex-end;
+
       br {
         display: unset;
       }
 
     }
   }
-  @media screen and (min-width: $desktop){
+  @media screen and (min-width: $desktop) {
     width: 570px;
     min-height: 201px;
     background-color: white;
@@ -1397,15 +1438,16 @@ a {
     margin: 0 auto;
     height: 362px;
     background: url("../img/bg-map-mobile@1x.png") no-repeat;
-    @media (min-resolution: 2dppx){
+    @media (min-resolution: 2dppx) {
       background-image: url("../img/bg-map-mobile@2x.png");
     }
   }
-  @media screen and (min-width: $tablet){
+
+  @media screen and (min-width: $tablet) {
     &__y-map {
       height: 400px;
       background: url("../img/bg-map-tablet@1x.png") no-repeat;
-      @media (min-resolution: 2dppx){
+      @media (min-resolution: 2dppx) {
         background-image: url("../img/bg-map-tablet@2x.png");
       }
     }
@@ -1493,6 +1535,7 @@ a {
     @extend .content-center;
     background-repeat: no-repeat;
     background-position: center;
+
     &:active svg {
       opacity: 0.3;
     }
@@ -1522,20 +1565,24 @@ a {
       }
     }
   }
-  @media screen and (min-width: $tablet){
+
+  @media screen and (min-width: $tablet) {
     &__link {
       svg {
         width: 100%;
         height: 100%;
       }
+
       &_vk {
         width: 30px;
         height: 22px;
       }
+
       &_inst {
         width: 23px;
         height: 23px;
       }
+
       &_fb {
         width: 13px;
         height: 27px;
@@ -1567,6 +1614,7 @@ a {
       opacity: 0.3;
     }
   }
+
   @media screen and (min-width: $tablet) {
     font-size: 16px;
     line-height: 18px;
@@ -1586,11 +1634,12 @@ a {
   padding-top: 27px;
   padding-bottom: 35px;
   display: block;
+
   &__title {
     line-height: 36px;
     padding-bottom: 40px;
     border-bottom: 1px solid $basic-gray-2;
-    @media screen and (max-width: $tablet - 1){
+    @media screen and (max-width: $tablet - 1) {
       @include unpadding(true);
     }
   }
@@ -1620,7 +1669,7 @@ a {
     padding-top: 72px;
     padding-bottom: 86px;
   }
-  }
+}
 
 .products {
 
@@ -1633,17 +1682,19 @@ a {
       grid-column: auto / span 1;
     }
   }
+
   &__list {
     @media (min-width: $tablet) {
       grid-row-gap: 59px;
     }
-    @media screen and (min-width: $desktop){
+    @media screen and (min-width: $desktop) {
       grid-row-gap: 63px;
     }
 
   }
 
 }
+
 .product {
 
   padding-bottom: 24px;
@@ -1652,7 +1703,7 @@ a {
   @media screen and (max-width: $tablet - 1) {
     @include border-bottom($special-gray);
   }
-  @media screen and (max-width: $tablet - 1){
+  @media screen and (max-width: $tablet - 1) {
     @include unpadding(true);
   }
 
@@ -1669,6 +1720,7 @@ a {
     font-size: 16px;
     line-height: 20px;
     color: $special-dark-gray-2;
+
     &_show-all {
       margin-bottom: 8px;
     }
@@ -1683,6 +1735,7 @@ a {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-end;
+
     & dt,
     & dd {
       flex-basis: 50%;
@@ -1703,6 +1756,7 @@ a {
     margin-bottom: -16px;
     width: 100%;
     max-width: 212px;
+
     img {
       width: 100%;
       height: auto;
@@ -1712,6 +1766,7 @@ a {
   &__button {
     margin-top: 12px;
     grid-area: btn;
+
     &_show-all {
       margin-top: 21px;
     }
@@ -1729,13 +1784,14 @@ a {
     padding-top: 79px;
     display: grid;
   }
-  
+
   &__text {
     font-family: "Arial", sans-serif;
     font-size: 12px;
     line-height: 16px;
     color: $special-dark-gray;
   }
+
   @media screen and (min-width: $tablet) {
     background-image: linear-gradient(to top, $basic-gray 0%, $basic-gray 84.1%, white 84.1%, white 100%);
     padding: 0;
@@ -1770,6 +1826,7 @@ a {
       margin-top: 10px;
       max-width: 136px;
       justify-self: center;
+
       & br {
         display: none;
       }
@@ -1781,6 +1838,7 @@ a {
       margin-right: 36.5px;
       font-size: 16px;
       line-height: 16px;
+
       & > * {
         padding-top: 9px;
         padding-bottom: 7px;
@@ -1794,6 +1852,7 @@ a {
       justify-self: center;
       align-self: end;
       margin-bottom: 22px;
+
       img {
         width: 100%;
         height: auto;
@@ -1814,11 +1873,13 @@ a {
       justify-content: space-between;
       padding-top: 157px;
       padding-bottom: 35px;
+
       .product__title {
         margin: 0 auto;
         margin-bottom: 23px;
 
       }
+
       .product__text {
         max-width: 167px;
         margin: 0 auto;
@@ -1828,6 +1889,7 @@ a {
   @media screen and (min-width: $desktop) {
     &__title {
       line-height: 22px;
+
       &_show-all {
         margin-bottom: 24px;
       }
@@ -1851,39 +1913,41 @@ a {
       display: grid
     }
   }
+
   &__title {
     font-size: 24px;
     line-height: 24px;
-    @media screen and (max-width: $tablet - 1){
+    @media screen and (max-width: $tablet - 1) {
       padding-bottom: 34px;
       @include border-bottom($special-gray);
     }
 
-    @media screen and (min-width: $tablet){
+    @media screen and (min-width: $tablet) {
       font-size: 36px;
       line-height: 36px;
       margin-bottom: 80px;
       margin-left: 38px;
     }
-    @media screen and (min-width: $desktop){
+    @media screen and (min-width: $desktop) {
       margin-left: 0;
-      margin-bottom: 82px ;
+      margin-bottom: 82px;
     }
   }
+
   &__list {
     margin-bottom: 35px;
-    @media screen  and  (max-width: $tablet - 1){
+    @media screen and (max-width: $tablet - 1) {
       @include unpadding(true);
     }
 
-    @media screen and (min-width: $tablet){
+    @media screen and (min-width: $tablet) {
       gap: 0;
       border: 1px solid $special-gray;
       border-bottom: none;
       margin-bottom: 69px;
     }
 
-    @media screen and (min-width: $desktop){
+    @media screen and (min-width: $desktop) {
       grid-column: 1 / 4;
       border: none;
       border-top: 1px solid $special-gray;
@@ -1893,11 +1957,12 @@ a {
   }
 
   &__promo {
-    @media screen and (min-width: $desktop){
+    @media screen and (min-width: $desktop) {
       grid-column: 4 / 5;
     }
   }
 }
+
 .product-additional {
   margin: 0;
   padding: 0;
@@ -1946,16 +2011,19 @@ a {
     &__features {
       align-self: end;
       margin: 0;
+
       > * {
         border: none;
         padding: 0;
       }
-      & dd{
+
+      & dd {
         flex-basis: 58%;
         flex-grow: 1;
         text-align: right;
       }
-      & dt{
+
+      & dt {
         flex-basis: 42%;
         flex-grow: 1;
       }
@@ -1964,7 +2032,7 @@ a {
       margin: 0;
     }
   }
-  @media screen and (min-width: $desktop){
+  @media screen and (min-width: $desktop) {
     display: flex;
     min-height: 72px;
     padding: 15px 0;
@@ -1980,6 +2048,7 @@ a {
       align-self: center;
       padding-top: 10px;
       padding-left: 4px;
+
       & > dd {
         text-align: left;
       }
@@ -1999,7 +2068,7 @@ a {
   min-height: 289px;
   background-color: $basic-green;
   background-image: url("../img/gift-photo-mobile@1x.jpg");
-  @media (min-resolution: 2dppx){
+  @media (min-resolution: 2dppx) {
     background-image: url("../img/gift-photo-mobile@2x.jpg");
   }
   background-repeat: no-repeat;
@@ -2026,12 +2095,12 @@ a {
     margin-bottom: 43px;
   }
 
-  @media screen and (min-width: $tablet){
+  @media screen and (min-width: $tablet) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     background-image: url("../img/gift-photo-tablet@1x.jpg");
-    @media (min-resolution: 2dppx){
+    @media (min-resolution: 2dppx) {
       background-image: url("../img/gift-photo-tablet@2x.jpg");
     }
     min-height: 200px;
@@ -2053,9 +2122,9 @@ a {
     }
   }
 
-  @media screen and (min-width: $desktop){
+  @media screen and (min-width: $desktop) {
     background-image: url("../img/gift-photo-desktop@1x.jpg");
-    @media (min-resolution: 2dppx){
+    @media (min-resolution: 2dppx) {
       background-image: url("../img/gift-photo-desktop@2x.jpg");
     }
     height: 289px;
@@ -2081,9 +2150,11 @@ a {
 .page-main_form {
   padding-top: 27px;
   padding-bottom: 32px;
+
   &__title {
     margin-bottom: 37px;
   }
+
   &__subtitle {
     font-size: 14px;
     line-height: 18px;
@@ -2119,25 +2190,26 @@ a {
 }
 
 
-
 .select-program-form {
   &__fieldset-title {
     font-size: 24px;
     line-height: 26px;
 
-    @media screen and (min-width: $tablet){
+    @media screen and (min-width: $tablet) {
       font-size: 36px;
       line-height: 36px;
     }
   }
+
   &__cat-info, &__program-select {
     grid-column: 1/-1;
   }
+
   &__cat-info {
     @media screen and (max-width: $tablet - 1) {
       @include unpadding(true);
     }
-    @media screen and (min-width: $tablet){
+    @media screen and (min-width: $tablet) {
       margin-bottom: 50px;
       margin-left: 40px;
       margin-right: 40px;
@@ -2150,13 +2222,14 @@ a {
 
 
   }
+
   &__program-select {
     margin-bottom: 22px;
 
     @media screen and (max-width: $tablet - 1) {
       @include unpadding(true);
     }
-    @media screen and (min-width: $tablet){
+    @media screen and (min-width: $tablet) {
       margin-bottom: 73px;
       margin-left: 40px;
       margin-right: 37px;
@@ -2172,7 +2245,7 @@ a {
     grid-column: 1/-1;
     margin-bottom: 27px;
 
-    @media screen and (min-width: $tablet){
+    @media screen and (min-width: $tablet) {
       margin-bottom: 65px;
       margin-left: 40px;
       margin-right: 35px;
@@ -2183,11 +2256,12 @@ a {
       margin-right: 0;
     }
   }
+
   &__comment {
     grid-column: 1/-1;
     margin-bottom: 27px;
 
-    @media screen and (min-width: $tablet){
+    @media screen and (min-width: $tablet) {
       margin-left: 40px;
       margin-right: 40px;
       margin-bottom: 65px;
@@ -2198,11 +2272,12 @@ a {
       margin-right: 0;
     }
   }
+
   &__additional {
     grid-column: 1/-1;
     margin-bottom: 32px;
 
-    @media screen and (min-width: $tablet){
+    @media screen and (min-width: $tablet) {
       margin-left: 40px;
       margin-right: 40px;
       margin-bottom: 60px
@@ -2217,7 +2292,7 @@ a {
     grid-column: 1/-1;
     margin-bottom: 21px;
 
-    @media screen and (min-width: $tablet){
+    @media screen and (min-width: $tablet) {
       margin-bottom: 0;
       margin-left: 41px;
       grid-column: 1 / 3;
@@ -2233,6 +2308,7 @@ a {
       max-width: none;
     }
   }
+
   &__required-notify {
     grid-column: 1/-1;
     text-align: center;
@@ -2240,7 +2316,7 @@ a {
     font-size: 14px;
     line-height: 16px;
 
-    @media screen and (min-width: $tablet){
+    @media screen and (min-width: $tablet) {
       text-align: left;
       font-size: 16px;
       line-height: 16px;
@@ -2258,6 +2334,7 @@ a {
 
 
 }
+
 .fieldset-grid {
   display: flex;
   flex-direction: column;
@@ -2265,18 +2342,19 @@ a {
 
   & > * + * {
     margin-top: 14px;
-    @media screen and (min-width: $tablet){
+    @media screen and (min-width: $tablet) {
       margin-top: 20px;
     }
   }
 }
-.program-select-fieldset{
+
+.program-select-fieldset {
   @media screen and (max-width: $tablet - 1) {
     @include border-bottom(#D9D9D9);
     padding-top: 18px;
     padding-bottom: 24px;
   }
-  @media screen and (min-width: $tablet){
+  @media screen and (min-width: $tablet) {
     border: 1px solid #E7E7E7;
     padding: 24px 27px;
   }
@@ -2289,11 +2367,12 @@ a {
   }
 
 }
-.owner-info-fieldset{
+
+.owner-info-fieldset {
   &__title {
     margin-bottom: 30px;
 
-    @media screen and (min-width: $tablet){
+    @media screen and (min-width: $tablet) {
       margin-bottom: 76px;
     }
   }
@@ -2303,45 +2382,48 @@ a {
       display: grid;
       grid-template-columns: 1fr 1fr;
       column-gap: 80px;
+
       & > * + * {
         margin: 0;
       }
     }
   }
 }
-.comment-fieldset{
+
+.comment-fieldset {
   &__title {
     margin-bottom: 34px;
-    @media screen and (min-width: $tablet){
+    @media screen and (min-width: $tablet) {
       margin-bottom: 76px;
     }
   }
 }
-.additional-fieldset{
+
+.additional-fieldset {
   &__title {
     margin-bottom: 34px;
 
-    @media screen and (min-width: $tablet){
+    @media screen and (min-width: $tablet) {
       margin-bottom: 57px;
     }
   }
+
   &__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     grid-row-gap: 13px;
     grid-column-gap: 15px;
-    @media screen and (min-width: $tablet){
+    @media screen and (min-width: $tablet) {
 
       grid-row-gap: 32px;
       grid-column-gap: 60px;
     }
-    @media screen and (min-width: $desktop){
+    @media screen and (min-width: $desktop) {
       grid-column-gap: 80px;
     }
   }
 
 }
-
 
 
 .input-field {
@@ -2351,14 +2433,14 @@ a {
   color: $special-dark-gray;
   position: relative;
 
-  @media screen and (min-width: $tablet){
+  @media screen and (min-width: $tablet) {
     font-size: 20px;
     line-height: 30px;
   }
 
   & > * + * {
     margin-left: 14px;
-    @media screen and (min-width: $tablet){
+    @media screen and (min-width: $tablet) {
       margin-left: 16px;
     }
   }
@@ -2368,17 +2450,19 @@ a {
       stroke: #FF8282;
     }
   }
+
   &__email {
     position: absolute;
     right: 15px;
-    @media screen and (min-width: $tablet){
+    @media screen and (min-width: $tablet) {
       right: 19px;
     }
   }
+
   &__phone {
     position: absolute;
     right: 13px;
-    @media screen and (min-width: $tablet){
+    @media screen and (min-width: $tablet) {
       right: 17px;
     }
   }
@@ -2387,6 +2471,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     input {
       font-family: "Oswald", "Arial", sans-serif;
       font-size: 16px;
@@ -2412,6 +2497,7 @@ a {
 
       &:invalid {
         border: 2px solid #FF8282;
+
         .input-field__icon {
 
         }
@@ -2442,7 +2528,7 @@ a {
       }
     }
 
-    @media screen and (min-width: $tablet){
+    @media screen and (min-width: $tablet) {
       input {
         font-size: 20px;
         line-height: 30px;
@@ -2472,7 +2558,7 @@ a {
     position: relative;
     transition-duration: 0.4s;
 
-    @media screen and (min-width: $tablet){
+    @media screen and (min-width: $tablet) {
       padding-left: 45px;
       height: 40px;
     }
@@ -2482,6 +2568,7 @@ a {
         border-color: #BABABA;
       }
     }
+
     &:active {
       opacity: 0.3;
     }
@@ -2500,7 +2587,7 @@ a {
       top: 0;
       transition: background-color 0.4s;
 
-      @media screen and (min-width: $tablet){
+      @media screen and (min-width: $tablet) {
         width: 40px;
         height: 40px;
       }
@@ -2511,7 +2598,7 @@ a {
       background-color: $basic-green;
 
     }
-    }
+  }
 
   &_text-area {
     & textarea {
@@ -2523,7 +2610,7 @@ a {
       min-height: 150px;
       font-family: inherit;
 
-      @media screen and (min-width: $tablet){
+      @media screen and (min-width: $tablet) {
         padding: 16px;
         min-height: 174px;
       }
@@ -2535,7 +2622,7 @@ a {
         font-size: 16px;
         line-height: 18px;
 
-        @media screen and (min-width: $tablet){
+        @media screen and (min-width: $tablet) {
           font-size: 20px;
           line-height: 20px;
         }
@@ -2552,7 +2639,7 @@ a {
     transition-duration: 0.4s;
     height: 30px;
 
-    @media screen and (min-width: $tablet){
+    @media screen and (min-width: $tablet) {
       height: 40px;
       padding-left: 45px;
     }
@@ -2567,19 +2654,22 @@ a {
       top: 0;
       transition: background 0.4s;
 
-      @media screen and (min-width: $tablet){
+      @media screen and (min-width: $tablet) {
         width: 40px;
         height: 40px;
       }
     }
+
     &:hover, &:focus {
       .input-field_checkbox__text::before {
         border-color: #BABABA;
       }
     }
+
     &:active {
       opacity: 0.3;
     }
+
     input:checked + &__text::before {
       background-image: url("../img/icon-tick.svg");
       background-position: center;
