@@ -1,0 +1,192 @@
+.programs-list {
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > * + * {
+      margin-top: 20px;
+    }
+  }
+
+  &__item {
+
+    background-color: $basic-gray;
+    padding-top: 21px;
+    padding-left: 22px;
+    padding-right: 22px;
+    padding-bottom: 22px;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    flex-grow: 1;
+
+    &_lose-weight {
+      background-image: url("../img/lose-weight_bg.svg");
+    }
+
+    &_get-fat {
+      background-image: url("../img/get-fat_bg.svg");
+      background-origin: padding-box;
+      background-position: 13px 25px;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 37px;
+    margin-bottom: 30px;
+    margin-left: 69px;
+    margin-top: 8px;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin-bottom: 23px;
+  }
+
+  &__link {
+    display: block;
+    border-top: 1px solid #d9d9d9;
+    padding-top: 16px;
+    font-size: 16px;
+    line-height: 16px;
+    font-family: inherit;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: inherit;
+    transition-duration: 0.3s;
+
+    & span {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: (calc(50% - 5px));
+        right: -43px;
+        width: 32px;
+        height: 10px;
+        background: url("../img/icon-right-arrow-long.svg") left center no-repeat;
+        transition-duration: 0.3s;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      & span::after {
+        background: url("../img/icon-right-arrow-verylong.svg") left center no-repeat;
+      }
+    }
+
+    &:active {
+      opacity: 0.3;
+
+      & span::after {
+        background: url("../img/icon-right-arrow-verylong.svg") left center no-repeat;
+      }
+    }
+  }
+
+
+  @media screen and (min-width: $tablet) {
+    &__container {
+      display: flex;
+      flex-wrap: wrap;
+
+      & > * + * {
+        margin-top: 30px;
+      }
+    }
+    &__title {
+      font-size: 36px;
+      line-height: 36px;
+      margin: 0;
+      margin-bottom: 24px;
+    }
+    &__text {
+      max-width: 59%;
+      margin-bottom: auto;
+    }
+    &__link {
+      & span::after {
+        top: (calc(50% - 7px));
+        right: -60px;
+        width: 34px;
+        height: 10px;
+      }
+    }
+    &__item {
+      display: flex;
+      flex-direction: column;
+      background-color: $basic-gray;
+      padding-left: 52px;
+      padding-bottom: 60px;
+      padding-top: 77px;
+      background-repeat: no-repeat;
+      background-origin: content-box;
+      flex-grow: 1;
+      min-height: 372px;
+
+      &_lose-weight {
+        background-image: url("../img/lose-weight_bg.svg");
+        background-origin: content-box;
+        padding-right: 62px;
+        background-size: 200px 211px;
+        background-position: top 2px right;
+      }
+
+      &_get-fat {
+        background-image: url("../img/get-fat_bg.svg");
+        background-origin: content-box;
+        background-size: 268px 200px;
+        padding-right: 28px;
+        background-position: top 15px right 2px;
+      }
+
+    }
+    &__link {
+      padding: 0;
+      border: none;
+      display: inline-block;
+      font-size: 20px;
+      line-height: 20px;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    &__container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+
+      & > * + * {
+        margin: 0 0 0 80px;
+      }
+    }
+    &__title {
+      margin-left: 162px;
+      margin-top: 36px;
+      margin-bottom: 73px;
+    }
+    &__item {
+      width: calc(50% - 40px);
+      padding: 41px 52px 65px 52px;
+      min-height: 374px;
+
+      &_lose-weight {
+        background-origin: content-box;
+        background-size: 100px 106px;
+        background-position: top left;
+      }
+
+      &_get-fat {
+        background-origin: padding-box;
+        background-size: 134px 100px;
+        background-position: 33px 47px;
+      }
+
+    }
+    &__text {
+      max-width: 100%;
+      margin-bottom: auto;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.cat-info-fieldset {
+  padding-bottom: 24px;
+  @media screen and (max-width: $tablet - 1) {
+    @include border-bottom(#D9D9D9);
+  }
+  @media screen and (min-width: $desktop) {
+    padding-bottom: 0;
+  }
+
+}

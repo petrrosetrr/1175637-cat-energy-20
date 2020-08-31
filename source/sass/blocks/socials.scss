@@ -1,0 +1,66 @@
+.socials {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__link {
+    display: block;
+    width: 25px;
+    @extend .content-center;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:active svg {
+      opacity: 0.3;
+    }
+
+    &_vk {
+      &:hover svg path,
+      &:focus svg path {
+        fill: $basic-green;
+      }
+    }
+
+    &_inst {
+
+      &:hover svg path,
+      &:focus svg path {
+        fill: $basic-green;
+      }
+    }
+
+    &_fb {
+
+      /*margin-left: -18px;*/
+      &:hover svg path,
+      &:focus svg path {
+        fill: none;
+        stroke: $basic-green;
+      }
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    &__link {
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      &_vk {
+        width: 30px;
+        height: 22px;
+      }
+
+      &_inst {
+        width: 23px;
+        height: 23px;
+      }
+
+      &_fb {
+        width: 13px;
+        height: 27px;
+      }
+    }
+  }
+}

@@ -29,4 +29,3 @@
     btnAfter.classList.toggle("before-after__toggle_active");
     stripe.classList.toggle("before-after__slider-inner-stripe_active")
   }
-

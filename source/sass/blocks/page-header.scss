@@ -1,0 +1,145 @@
+.page-header {
+  @media (max-width: $tablet - 1px) {
+    @include unpadding();
+  }
+
+  &_close {
+    height: 66px;
+    overflow: hidden;
+  }
+
+  &__static {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 11px;
+    padding-bottom: 17px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @extend .content-center;
+    @include border-bottom(#E6E6E6);
+  }
+
+  &__img-logo,
+  &__text-logo {
+
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+
+  &__text-logo {
+    margin-top: 5px;
+    margin-left: -9px;
+  }
+
+  &__toggle {
+    height: 18px;
+    margin-top: 4px;
+    background: none;
+    border: none;
+    padding: 0;
+    opacity: 0;
+    @extend .content-center;
+
+    span,
+    span::before,
+    span::after {
+      width: 24px;
+      height: 2px;
+      background-color: black;
+      position: relative;
+      transition: all 0.2s;
+    }
+
+    span::before,
+    span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+
+    span::before {
+      top: -8px;
+    }
+
+    span::after {
+      bottom: -8px;
+    }
+
+    &_close {
+      span {
+        background-color: transparent;
+
+        &::before {
+          top: 0;
+          transform: rotate(45deg);
+        }
+
+        &::after {
+          bottom: 0;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  &_index {
+    @media screen and (min-width: $desktop) {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    padding-top: 24px;
+    min-height: 80px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: unset;
+    overflow: unset;
+    &__static {
+      display: block;
+      padding: 0;
+      border: none;
+      margin-right: 95px;
+    }
+    &__text-logo, &__toggle {
+      display: none;
+    }
+    &__img-logo img {
+      width: 174px;
+      height: 52px;
+      margin-bottom: 4px;
+    }
+    &__site-nav {
+      flex-basis: 440px;
+      flex-grow: 1;
+      max-width: 500px;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    padding-top: 48px;
+    min-height: 107px;
+
+    &__site-nav {
+      max-width: 480px;
+      margin-bottom: 0px;
+      margin-right: 0px;
+    }
+
+
+    &__img-logo img {
+      margin-top: 5px;
+      width: 202px;
+      height: 59px;
+    }
+  }
+}

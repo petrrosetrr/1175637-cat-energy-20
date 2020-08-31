@@ -1,0 +1,113 @@
+.select-program {
+  background-color: white;
+  background-image: url("../img/index-background-mobile@1x.jpg");
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/index-background-mobile@2x.jpg");
+  }
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+  color: white;
+  text-align: center;
+
+  &__container {
+    padding-top: 27px;
+  }
+
+  &__title {
+    line-height: 36px;
+    margin-bottom: 25px;
+  }
+
+  &__slogan {
+    font-size: 14px;
+    line-height: 14px;
+    margin-bottom: 29px;
+    text-transform: uppercase;
+  }
+
+  &__can-img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    margin-bottom: 3px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    background: none;
+    color: black;
+    &__container {
+      padding-top: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+    }
+    &__title {
+      line-height: 60px;
+      margin-bottom: 40px;
+      max-width: 414px;
+      text-align: left;
+      margin-left: 87px;
+    }
+    &__slogan {
+      font-size: 20px;
+      line-height: 20px;
+      margin-bottom: 20px;
+      margin-left: 87px;
+    }
+    &__can-img-container {
+      width: 100%;
+    }
+    &__can-img {
+      width: 100%;
+      height: auto;
+      max-width: 800px;
+
+    }
+    &__button {
+      width: 244px;
+      position: absolute;
+      top: 290px;
+      left: 82px;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    @include unpadding(true);
+    min-height: 696px;
+    position: relative;
+    z-index: 1;
+    margin-top: -117px;
+    background-image: url("../img/index-background-desktop@1x.jpg");
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/index-background-desktop@2x.jpg");
+    }
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 720px 696px;
+    &__container {
+      padding-top: 224px;
+      position: relative;
+      padding-left: 80px;
+    }
+    &__can-img {
+      position: absolute;
+      top: 141px;
+      right: 220px;
+      width: 552px;
+      height: 499px;
+    }
+    &__button {
+      position: static;
+    }
+
+    &__title {
+      margin-left: 0;
+      margin-bottom: 39px;
+    }
+    &__slogan {
+      margin: 0;
+      margin-bottom: 52px;
+    }
+  }
+}

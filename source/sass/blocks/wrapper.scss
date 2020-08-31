@@ -1,0 +1,13 @@
+.wrapper {
+  padding: 0 $side-padding-m;
+  margin: 0 auto;
+  min-width: $mobile;
+
+  @media screen and (min-width: $tablet) {
+    padding: 0 $side-padding-t;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 0 $side-padding-d;
+  }
+}

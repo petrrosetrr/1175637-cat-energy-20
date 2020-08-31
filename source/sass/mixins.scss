@@ -1,0 +1,81 @@
+@mixin unpadding($padding-inside: false) {
+  margin-left: -#{$side-padding-m};
+  margin-right: -#{$side-padding-m};
+
+  @if $padding-inside {
+    padding-left: #{$side-padding-m};
+    padding-right: #{$side-padding-m};
+  }
+
+  @media (min-width: 768px) {
+    margin-left: -#{$side-padding-t};
+    margin-right: -#{$side-padding-t};
+
+    @if $padding-inside {
+      padding-left: #{$side-padding-t};
+      padding-right: #{$side-padding-t};
+    }
+  }
+
+  @media (min-width: 1440px) {
+    margin-left: -#{$side-padding-d};
+    margin-right: -#{$side-padding-d};
+
+    @if $padding-inside {
+      padding-left: #{$side-padding-d};
+      padding-right: #{$side-padding-d};
+    }
+  }
+}
+
+@mixin border-bottom($color: $special-gray-2) {
+  border-bottom: 1px solid $color;
+}
+
+.green-stripe {
+  display: flex;
+
+  &::after {
+    content: "";
+    align-self: center;
+    margin-top: 7px;
+    min-width: 53px;
+    height: 2px;
+    background-color: $basic-green;
+    margin-right: $side-padding-m * -1;
+    margin-left: 22px;
+    flex-grow: 1;
+  }
+
+  @media screen and (min-width: $tablet) {
+    &::before, &::after {
+      margin-top: 12px;
+    }
+    &::after {
+      margin-left: 35px;
+      margin-right: -1 * $side-padding-t;
+    }
+    &::before {
+      content: "";
+      align-self: center;
+      width: 30px;
+      height: 2px;
+      background-color: $basic-green;
+      margin-left: $side-padding-t * -1;
+      margin-right: 38px;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    &::before, &::after {
+      margin-top: 15px;
+    }
+    &::before {
+      margin-left: -1 * $side-padding-d;
+      margin-right: 40px;
+      width: 70px;
+    }
+    &::after {
+      margin-right: -1 * $side-padding-d;
+    }
+  }
+}

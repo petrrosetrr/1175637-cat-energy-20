@@ -1,0 +1,13 @@
+.text {
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  color: $special-dark-gray;
+  font-weight: normal;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 24px;
+    color: black;
+  }
+}

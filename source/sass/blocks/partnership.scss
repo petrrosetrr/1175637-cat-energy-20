@@ -1,0 +1,81 @@
+.partnership {
+  color: #111111;
+  min-height: 114px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 25px;
+
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 20px;
+    width: 50%;
+  }
+
+  &__address {
+    font-family: "Arial", sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: $special-dark-gray;
+    width: 50%;
+
+    br {
+      display: none;
+    }
+
+
+  }
+
+  &_inner-page {
+    background-color: $basic-gray;
+    @media screen and (max-width: $tablet - 1) {
+      padding-top: 28px;
+    }
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1) {
+    padding-left: 71px;
+    padding-right: 71px;
+  }
+  @media screen and (min-width: $tablet) {
+    min-height: 201px;
+    padding-top: 49px;
+    padding-bottom: 41px;
+    align-items: center;
+    &__title {
+      font-size: 20px;
+      line-height: 25px;
+      margin: 0;
+      max-width: 171px;
+    }
+    &__address {
+      font-family: "Arial", sans-serif;
+      font-size: 16px;
+      line-height: 19px;
+      color: $special-dark-gray;
+      text-align: right;
+      display: flex;
+      justify-content: flex-end;
+
+      br {
+        display: unset;
+      }
+
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    width: 570px;
+    min-height: 201px;
+    background-color: white;
+    padding: 66px 89px 51px 76px;
+    &__title {
+      align-self: flex-start;
+    }
+    &__address {
+      text-align: left;
+      margin-top: -12px;
+    }
+  }
+}

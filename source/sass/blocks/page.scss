@@ -1,0 +1,10 @@
+.page {
+  &__body {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    color: black;
+    font-family: "Oswald", "Arial", sans-serif;
+    overflow-x: hidden;
+  }
+}

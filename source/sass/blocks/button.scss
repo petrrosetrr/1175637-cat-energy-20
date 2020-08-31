@@ -1,0 +1,52 @@
+.button {
+  @extend .content-center;
+  width: 100%;
+  min-height: 40px;
+  box-sizing: border-box;
+  padding: 12px 12px;
+  margin: 0;
+  border: none;
+  text-align: center;
+  background: $basic-green;
+  color: white;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 16px;
+  font-family: inherit;
+
+  &_small-text {
+    font-size: 14px;
+    line-height: 14px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $basic-green-2;
+  }
+
+  &:active {
+    color: rgba(white, 0.3);
+  }
+
+  &_show-all {
+    background-color: $basic-gray;
+    color: $special-dark-gray;
+
+    &:hover,
+    &:focus {
+      background: $basic-gray-2;
+    }
+
+    &:active {
+      color: rgba($special-dark-gray, 0.3);
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    min-height: 54px;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 17px;
+  }
+
+}

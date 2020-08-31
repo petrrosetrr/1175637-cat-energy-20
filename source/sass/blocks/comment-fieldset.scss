@@ -1,0 +1,20 @@
+.comment-fieldset {
+  &__title {
+    margin-bottom: 34px;
+    @extend .green-stripe;
+    @media screen and (min-width: $tablet) and (max-width: $desktop - 1) {
+      margin: 0 -40px;
+      &::before, &::after {
+        align-self: center;
+        margin-top: 10px;
+      }
+      &::before {
+        margin-right: 40px;
+      }
+    }
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 76px;
+
+    }
+  }
+}

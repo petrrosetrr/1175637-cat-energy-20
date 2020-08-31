@@ -1,0 +1,40 @@
+.catalog {
+  padding-top: 27px;
+  padding-bottom: 35px;
+  display: block;
+
+  &__title {
+    line-height: 36px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid $basic-gray-2;
+    @media screen and (max-width: $tablet - 1) {
+      @include unpadding(true);
+    }
+  }
+
+  &__products {
+    margin-bottom: 28px;
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 68px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 76px;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    padding-top: 60px;
+    padding-bottom: 75px;
+    &__title {
+      line-height: 60px;
+      margin-bottom: 83px;
+      border: none;
+      padding: 0;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    padding-top: 72px;
+    padding-bottom: 86px;
+  }
+}
