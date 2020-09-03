@@ -10,4 +10,4 @@ node_modules/
 npm-debug.*
 build/
 Thumbs.db
-/preview/
+preview/
