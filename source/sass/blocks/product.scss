@@ -1,0 +1,207 @@
+.product {
+
+  padding-bottom: 24px;
+  padding-top: 20px;
+
+  @media screen and (max-width: $tablet - 1) {
+    @include border-bottom($special-gray);
+  }
+  @media screen and (max-width: $tablet - 1) {
+    @include unpadding(true);
+  }
+
+  display: grid;
+  grid-template-areas: "img title"
+    "img desc"
+    "btn btn";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content min-content min-content;
+
+  &__title {
+    grid-area: title;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 20px;
+    color: $special-dark-gray-2;
+
+    &_show-all {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__features {
+    grid-area: desc;
+    align-self: end;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    & dt,
+    & dd {
+      flex-basis: 50%;
+      flex-grow: 1;
+    }
+
+    & dt {
+      text-align: right;
+    }
+  }
+
+  &__image {
+    grid-area: img;
+    align-self: center;
+    justify-self: center;
+    margin: 0 auto;
+    margin-top: -16px;
+    margin-bottom: -16px;
+    width: 100%;
+    max-width: 212px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__button {
+    margin-top: 12px;
+    grid-area: btn;
+
+    &_show-all {
+      margin-top: 21px;
+    }
+  }
+
+  &_show-all {
+    grid-template-columns: 100%;
+    grid-template-rows: min-content min-content;
+    grid-auto-flow: row;
+    justify-items: center;
+    background-image: url("../img/icon-plus-mobile.svg");
+    background-position: center 26px;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding-top: 79px;
+    display: grid;
+  }
+
+  &__text {
+    font-family: "Arial", sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    color: $special-dark-gray;
+  }
+
+  @media screen and (min-width: $tablet) {
+    background-image: linear-gradient(to top, $basic-gray 0%, $basic-gray 84.1%, white 84.1%, white 100%);
+    padding: 0;
+    margin: 0;
+    padding-bottom: 40px;
+    display: grid;
+    grid-template-areas:
+    "img img"
+    "title title"
+    "desc desc"
+    "btn btn";
+    grid-template-rows: 234px min-content 1fr min-content;
+    &__text {
+      font-size: 16px;
+      line-height: 18px;
+    }
+    &__button {
+      min-height: 39px;
+      font-size: 16px;
+      line-height: 20px;
+      padding: 9px;
+      margin: 0;
+      margin-left: 39px;
+      margin-right: 37px;
+      width: auto;
+    }
+    &__title {
+      font-size: 20px;
+      line-height: 24px;
+      text-align: center;
+      margin-bottom: 0px;
+      margin-top: 10px;
+      max-width: 136px;
+      justify-self: center;
+
+      & br {
+        display: none;
+      }
+    }
+    &__features {
+      margin-top: 11px;
+      margin-bottom: 30.5px;
+      margin-left: 36.5px;
+      margin-right: 36.5px;
+      font-size: 16px;
+      line-height: 16px;
+
+      & > * {
+        padding-top: 9px;
+        padding-bottom: 7px;
+        border-bottom: 1px solid $special-gray;
+      }
+    }
+    &__image {
+      margin: 0 -36px;
+      width: 100%;
+      max-width: 350px;
+      justify-self: center;
+      align-self: end;
+      margin-bottom: 22px;
+
+      img {
+        width: 100%;
+        height: auto;
+        max-width: none;
+        margin: 0 auto;
+      }
+    }
+    &_show-all {
+      border: 2px solid $basic-gray;
+      background-image: url("../img/icon-plus-mobile.svg");
+      background-position: center 52px;
+      background-repeat: no-repeat;
+      background-size: 60px;
+      height: 430px;
+      align-self: end;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-top: 157px;
+      padding-bottom: 35px;
+
+      .product__title {
+        margin: 0 auto;
+        margin-bottom: 23px;
+
+      }
+
+      .product__text {
+        max-width: 167px;
+        margin: 0 auto;
+      }
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    &__title {
+      line-height: 22px;
+
+      &_show-all {
+        margin-bottom: 24px;
+      }
+    }
+    &__features {
+      margin-top: 14px;
+    }
+    &_show-all {
+      padding-top: 160px;
+    }
+  }
+}

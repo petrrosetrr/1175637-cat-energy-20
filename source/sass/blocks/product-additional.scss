@@ -1,0 +1,97 @@
+.product-additional {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 18px;
+  padding-top: 11px;
+
+  grid-template-areas: "title title"
+                      "desc desc"
+                      "btn btn";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content 1fr min-content;
+
+  &__title {
+    grid-area: title;
+    margin-bottom: 12px;
+  }
+
+  &__features {
+    grid-area: desc;
+    align-self: center;
+    margin: 0;
+    font-size: 14px;
+    line-height: 14px;
+  }
+
+  &__button {
+    grid-area: btn;
+    margin-top: 14px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    grid-column: 1 / -1;
+    border-bottom: 1px solid $special-gray;
+    background: none;
+    padding: 24px 38px 28px;
+    display: grid;
+    grid-row-gap: 23px;
+    grid-template-areas: "title desc"
+                          "btn btn";
+    grid-template-columns: 1fr 230px;
+    grid-template-rows: 1fr min-content;
+    min-height: 138px;
+    &__title {
+      justify-self: start;
+      align-self: start;
+      margin: 0;
+    }
+    &__features {
+      align-self: end;
+      margin: 0;
+
+      > * {
+        border: none;
+        padding: 0;
+      }
+
+      & dd {
+        flex-basis: 58%;
+        flex-grow: 1;
+        text-align: right;
+      }
+
+      & dt {
+        flex-basis: 42%;
+        flex-grow: 1;
+      }
+    }
+    &__button {
+      margin: 0;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    min-height: 72px;
+    padding: 15px 0;
+    align-items: center;
+    justify-content: space-between;
+    &__title {
+      margin-right: auto;
+      align-self: center;
+    }
+    &__features {
+      margin-right: 40px;
+      flex-basis: 290px;
+      align-self: center;
+      padding-top: 10px;
+      padding-left: 4px;
+
+      & > dd {
+        text-align: left;
+      }
+    }
+    &__button {
+      flex-basis: 245px;
+    }
+  }
+}

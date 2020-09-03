@@ -1,0 +1,252 @@
+.input-field {
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: $special-dark-gray;
+  position: relative;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  & > * + * {
+    margin-left: 14px;
+    @media screen and (min-width: $tablet) {
+      margin-left: 16px;
+    }
+  }
+
+  &__icon {
+    path {
+      stroke: #FF8282;
+    }
+  }
+
+  &__email {
+    position: absolute;
+    right: 15px;
+    @media screen and (min-width: $tablet) {
+      right: 19px;
+    }
+  }
+
+  &__phone {
+    position: absolute;
+    right: 13px;
+    @media screen and (min-width: $tablet) {
+      right: 17px;
+    }
+  }
+
+  &_text-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    input {
+      font-family: "Oswald", "Arial", sans-serif;
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 18px;
+      color: $special-dark-gray;
+      flex-grow: 1;
+      border: 1px solid #E7E7E7;
+      border-radius: 0;
+      height: 45px;
+      padding: 0;
+      padding-left: 14px;
+      padding-right: 14px;
+      -moz-appearance: textfield;
+
+      &:hover {
+        border: 1px solid $special-gray;
+      }
+
+      &:focus {
+        border: 2px solid #444444;
+      }
+
+      &:invalid {
+        border: 2px solid #FF8282;
+
+        .input-field__icon {
+
+        }
+
+
+      }
+
+      &::placeholder {
+        text-transform: uppercase;
+        font: inherit;
+        line-height: 43px;
+        color: $special-dark-gray;
+        margin: 0;
+        padding: 0;
+      }
+
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+
+    &_has-icon {
+      input {
+        padding-right: 35px;
+      }
+    }
+
+    @media screen and (min-width: $tablet) {
+      input {
+        font-size: 20px;
+        line-height: 30px;
+        height: 52px;
+        padding-left: 17px;
+        padding-right: 17px;
+
+        &::placeholder {
+          line-height: 50px;
+        }
+      }
+
+      &_has-icon {
+        input {
+          padding-right: 40px;
+        }
+      }
+    }
+  }
+
+  &_radio {
+    color: $special-dark-gray-2;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    position: relative;
+    transition-duration: 0.4s;
+
+    @media screen and (min-width: $tablet) {
+      padding-left: 45px;
+      height: 40px;
+    }
+
+    &:hover, &:focus {
+      .input-field_radio__text::before {
+        border-color: #BABABA;
+      }
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+
+    &__text::before {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid $special-gray;
+      padding: 10px;
+      background-origin: content-box;
+      background-clip: content-box;
+      left: 0;
+      top: 0;
+      transition: background-color 0.4s;
+
+      @media screen and (min-width: $tablet) {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+
+    input:checked + &__text::before {
+      background-color: $basic-green;
+
+    }
+  }
+
+  &_text-area {
+    & textarea {
+      width: 100%;
+      border: 1px solid #E7E7E7;
+      padding: 12px;
+      resize: none;
+      overflow: auto;
+      min-height: 150px;
+      font-family: inherit;
+
+      @media screen and (min-width: $tablet) {
+        padding: 16px;
+        min-height: 174px;
+      }
+
+      &::placeholder {
+        font-family: "Oswald", "Arial", sans-serif;
+        text-transform: uppercase;
+        color: $special-dark-gray;
+        font-size: 16px;
+        line-height: 18px;
+
+        @media screen and (min-width: $tablet) {
+          font-size: 20px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+
+  &_checkbox {
+    color: $special-dark-gray-2;
+    padding-left: 45px;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    transition-duration: 0.4s;
+    height: 30px;
+
+    @media screen and (min-width: $tablet) {
+      height: 40px;
+      padding-left: 45px;
+    }
+
+    &__text::before {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border: 1px solid $special-gray;
+      left: 0;
+      top: 0;
+      transition: background 0.4s;
+
+      @media screen and (min-width: $tablet) {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    &:hover, &:focus {
+      .input-field_checkbox__text::before {
+        border-color: #BABABA;
+      }
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+
+    input:checked + &__text::before {
+      background-image: url("../img/icon-tick.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 18px 14px;
+    }
+  }
+}

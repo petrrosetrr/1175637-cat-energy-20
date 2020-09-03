@@ -2,7 +2,7 @@
    v2.0-modified | 20110126
    License: none (public domain)
 */
-
+/* stylelint-disable */
 html,
 body,
 div,
@@ -445,3 +445,16 @@ textarea {
   color: #000000;
   padding: 0.2em 0;
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  font-family: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+/* stylelint-enable */

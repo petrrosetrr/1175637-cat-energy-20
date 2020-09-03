@@ -1,0 +1,36 @@
+.additional-fieldset {
+  &__title {
+    margin-bottom: 34px;
+    @extend .green-stripe;
+    @media screen and (min-width: $tablet) and (max-width: $desktop - 1) {
+      margin: 0 -40px;
+      &::before, &::after {
+        align-self: center;
+        margin-top: 10px;
+      }
+      &::before {
+        margin-right: 40px;
+      }
+    }
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 57px;
+    }
+
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-row-gap: 13px;
+    grid-column-gap: 15px;
+    @media screen and (min-width: $tablet) {
+
+      grid-row-gap: 32px;
+      grid-column-gap: 60px;
+    }
+    @media screen and (min-width: $desktop) {
+      grid-column-gap: 80px;
+    }
+  }
+
+}

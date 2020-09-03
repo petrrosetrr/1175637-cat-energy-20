@@ -1,0 +1,23 @@
+.products {
+
+  &__product {
+    grid-column: 1/-1;
+    @media screen and (min-width: $tablet) {
+      grid-column: auto / span 2;
+    }
+    @media screen and (min-width: $desktop) {
+      grid-column: auto / span 1;
+    }
+  }
+
+  &__list {
+    @media (min-width: $tablet) {
+      grid-row-gap: 59px;
+    }
+    @media screen and (min-width: $desktop) {
+      grid-row-gap: 63px;
+    }
+
+  }
+
+}

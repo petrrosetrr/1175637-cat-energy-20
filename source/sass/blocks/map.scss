@@ -1,0 +1,28 @@
+.map {
+  &__y-map {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    height: 362px;
+    background: url("../img/bg-map-mobile@1x.png") no-repeat;
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/bg-map-mobile@2x.png");
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    &__y-map {
+      height: 400px;
+      background: url("../img/bg-map-tablet@1x.png") no-repeat;
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/bg-map-tablet@2x.png");
+      }
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    &__y-map {
+      background-image: url("../img/bg-map-desktop@2x.png");
+    }
+  }
+}

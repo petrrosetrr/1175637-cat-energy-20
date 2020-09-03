@@ -1,0 +1,80 @@
+.page-main_index {
+  &__programs-list {
+    margin-top: 22px;
+    margin-bottom: 30px;
+    @media screen and (min-width: $tablet) {
+      margin-top: 0;
+      margin-bottom: 53px;
+    }
+    @media screen and (min-width: $desktop) {
+      margin-top: 0;
+      margin-bottom: 80px;
+    }
+  }
+
+  &__select-program {
+    @media screen and (max-width: $tablet - 1) {
+      @include unpadding(true);
+    }
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 82px;
+    }
+
+  }
+
+  &__how-it-works {
+    margin-bottom: 42px;
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 0px;
+    }
+  }
+
+  &__before-after {
+    @include unpadding(true);
+  }
+}
+.page-main_form {
+  padding-top: 27px;
+  padding-bottom: 32px;
+
+  &__title {
+    margin-bottom: 37px;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: uppercase;
+    margin-bottom: 39px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    padding-top: 60px;
+    padding-bottom: 72px;
+
+    &__title {
+      margin-bottom: 55px;
+    }
+
+    &__subtitle {
+      margin-bottom: 66px;
+      font-size: 20px;
+      line-height: 30px;
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    padding-top: 70px;
+    padding-bottom: 84px;
+    &__title {
+      margin-bottom: 58px;
+    }
+    &__subtitle {
+      margin-bottom: 65px;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+}

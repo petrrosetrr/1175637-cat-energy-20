@@ -1,0 +1,24 @@
+.page-footer {
+  &__map {
+    @include unpadding();
+  }
+
+  @media screen and (min-width: $desktop) {
+    position: relative;
+  }
+
+  &__metadata {
+    @include unpadding(true);
+  }
+
+  &__partnership {
+    @media screen and (max-width: $desktop - 1) {
+      @include unpadding(true);
+    }
+    @media screen and (min-width: $desktop) {
+      position: absolute;
+      top: 95px;
+      left: 0px;
+    }
+  }
+}
