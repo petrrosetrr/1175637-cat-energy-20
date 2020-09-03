@@ -82,22 +82,22 @@
     <h2 class="before-after__title title">Живой пример</h2>
 
     <p class="before-after__text text">Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.</p>
-    <dl class="before-after__statistic">
-      <div class="before-after__items-highlighted">
+    <ul class="before-after__statistic">
+      <li class="before-after__items-highlighted">
         <div class="before-after__item-highlighted">
-          <dt class="before-after__item-value">5 кг</dt>
-          <dd class="before-after__item-title">Снижение веса</dd>
+          <span class="before-after__item-value">5 кг</span>
+          <span class="before-after__item-title">Снижение веса</span>
         </div>
         <div class="before-after__item-highlighted">
-          <dt class="before-after__item-value">60 дней</dt>
-          <dd class="before-after__item-title">Затрачено времени</dd>
+          <span class="before-after__item-value">60 дней</span>
+          <span class="before-after__item-title">Затрачено времени</span>
         </div>
-      </div>
-      <div class="before-after__goal-price">
-        <dt>15 000 руб.</dt>
-        <dd>Затраты на питание:</dd>
-      </div>
-    </dl>
+      </li>
+      <li class="before-after__goal-price">
+        <span>15 000 руб.</span>
+        <span>Затраты на питание:</span>
+      </li>
+    </ul>
     <div class="before-after__slider">
       <div class="before-after__img-container">
         <img class="before-after__slide before-after__slide_before before-after__slide_active slide-before-js" alt="Кот до"
@@ -106,14 +106,14 @@
                   img/before-tablet@1x.png 690w,
                   img/before-tablet@2x.png 1380w"
           sizes="100vw"
-          src="img/before-mobile@1x.png" width="320" height="240">
+          src="img/before-mobile@1x.png" width="320" height="240" loading="lazy">
         <img class="before-after__slide before-after__slide_after slide-after-js" alt="Кот после"
           srcset="img/after-mobile@1x.png 320w,
                   img/after-mobile@2x.png 640w,
                   img/after-tablet@1x.png 690w,
                   img/after-tablet@2x.png 1380w"
           sizes="100vw"
-          src="img/after-mobile@1x.png" width="320" height="240">
+          src="img/after-mobile@1x.png" width="320" height="240" loading="lazy">
       </div>
       <div class="before-after__toggles">
         <button class="before-after__toggle btn-before-js before-after__toggle_active" type="button">Было</button>
@@ -133,7 +133,7 @@
   </section>
   <section class="page-footer__map map">
     <h2 class="visually-hidden">Как нас найти на карте</h2>
-    <iframe class="map__y-map" src="https://yandex.ru/map-widget/v1/?um=constructor%3A13528d1d6c3865d0e72c408c57e103b541cd3df613dc7bb72d9f708fc4af225f&amp;source=constructor" height="400"></iframe>
+    <iframe class="map__y-map" aria-label="Как нас найти на карте" src="https://yandex.ru/map-widget/v1/?um=constructor%3A13528d1d6c3865d0e72c408c57e103b541cd3df613dc7bb72d9f708fc4af225f&amp;source=constructor" height="400"></iframe>
   </section>
   <section class="page-footer__metadata metadata">
     <div class="metadata__container container">
@@ -173,6 +173,6 @@
     </div>
   </section>
 </footer>
-<script src="js/script.js" defer></script>
+<script src="js/script.min.js" defer></script>
 </body>
 </html>

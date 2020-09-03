@@ -12,6 +12,7 @@ const webp = require('gulp-webp');
 const svgstore = require('gulp-svgstore');
 const del = require("del");
 const htmlMinimizer = require("gulp-html-minimizer");
+const terser = require('gulp-terser');
 
 // Styles
 const styles = () => {
@@ -56,7 +57,7 @@ const images = () => {
   return gulp.src("source/img/**/*.{jpg,png,svg}")
     .pipe(imagemin([
       imagemin.optipng({optimizationLevel: 3}),
-      imagemin.mozjpeg({progressive: true}),
+      imagemin.mozjpeg({ progressive: true}),
       imagemin.svgo()
     ]))
 }
@@ -90,7 +91,6 @@ const copy = () => {
   return gulp.src([
     "source/fonts/**/*.{woff,woff2}",
     "source/img/**",
-    "source/js/**",
     "source/*.ico"
   ],  {
     base: "source"
@@ -118,17 +118,33 @@ const html = () => {
 
 exports.html = html;
 
+//Js
+
+const scripts = () => {
+  return gulp.src("source/js/*.js")
+    .pipe(terser())
+    .pipe(rename("script.min.js"))
+    .pipe(gulp.dest("build/js"))
+    .pipe(sync.stream());
+}
+
+exports.scripts = scripts;
+
 const build = (done) => {
   gulp.series(
+    images,
+    createWebp,
+    sprite,
     clean,
     copy,
     styles,
-    html
+    html,
+    scripts
   )(done)
 };
 
 exports.build = build;
 
 exports.default = gulp.series(
-  styles, server, watcher
+  build, server, watcher
 );
