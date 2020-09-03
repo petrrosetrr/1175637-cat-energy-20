@@ -1,4 +1,3 @@
-
   let toggleBtn = document.querySelector(".page-header__toggle");
   toggleBtn.style.opacity = "1";
   let pageHeader = document.querySelector(".page-header");

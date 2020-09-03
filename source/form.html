@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preload" href="fonts/oswaldregular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/oswaldmedium.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.min.css">
   <title>HTML Academy: Кэт энерджи - Подбор программы</title>
 </head>
@@ -107,7 +108,7 @@
   </section>
   <section class="page-footer__map map">
     <h2 class="visually-hidden">Как нас найти на карте</h2>
-    <iframe class="map__y-map" src="https://yandex.ru/map-widget/v1/?um=constructor%3A13528d1d6c3865d0e72c408c57e103b541cd3df613dc7bb72d9f708fc4af225f&amp;source=constructor" height="400"></iframe>
+    <iframe class="map__y-map" aria-label="Как нас найти на карте" src="https://yandex.ru/map-widget/v1/?um=constructor%3A13528d1d6c3865d0e72c408c57e103b541cd3df613dc7bb72d9f708fc4af225f&amp;source=constructor" height="400"></iframe>
   </section>
   <section class="page-footer__metadata metadata">
     <div class="metadata__container container">
@@ -147,6 +148,6 @@
     </div>
   </section>
 </footer>
-<script src="js/script.js" defer></script>
+<script src="js/script.min.js" defer></script>
 </body>
 </html>
