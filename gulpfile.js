@@ -77,6 +77,7 @@ exports.createWebp = createWebp;
 
 const sprite = () => {
   return gulp.src("source/img/**/icon-*.svg")
+    .pipe(svgstore())
     .pipe(rename("sprite.svg"))
     .pipe(gulp.dest("build/img"))
 }
@@ -111,6 +112,7 @@ exports.clean = clean;
 
 const html = () => {
   return gulp.src("source/*.html")
+    .pipe(htmlMinimizer({collapseWhitespace: true}))
     .pipe(gulp.dest("build"))
 };
 
