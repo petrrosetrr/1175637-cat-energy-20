@@ -9,22 +9,28 @@
     pageHeader.classList.toggle("page-header_close");
   }
 
-  let btnBefore = document.querySelector(".btn-before-js")
-  let btnAfter = document.querySelector(".btn-after-js")
-  let slideBefore = document.querySelector(".slide-before-js")
-  let slideAfter = document.querySelector(".slide-after-js")
-  let stripe = document.querySelector(".before-after__slider-inner-stripe");
-  btnBefore.onclick = function () {
-    slideBefore.classList.toggle("before-after__slide_active");
-    slideAfter.classList.toggle("before-after__slide_active");
-    btnBefore.classList.toggle("before-after__toggle_active");
-    btnAfter.classList.toggle("before-after__toggle_active");
-    stripe.classList.toggle("before-after__slider-inner-stripe_active")
+  try {
+    let btnBefore = document.querySelector(".btn-before-js")
+    let btnAfter = document.querySelector(".btn-after-js")
+    let slideBefore = document.querySelector(".slide-before-js")
+    let slideAfter = document.querySelector(".slide-after-js")
+    let stripe = document.querySelector(".before-after__slider-inner-stripe");
+    btnBefore.onclick = function () {
+      slideBefore.classList.toggle("before-after__slide_active");
+      slideAfter.classList.toggle("before-after__slide_active");
+      btnBefore.classList.toggle("before-after__toggle_active");
+      btnAfter.classList.toggle("before-after__toggle_active");
+      stripe.classList.toggle("before-after__slider-inner-stripe_active")
+    }
+    btnAfter.onclick = function () {
+      slideBefore.classList.toggle("before-after__slide_active");
+      slideAfter.classList.toggle("before-after__slide_active");
+      btnBefore.classList.toggle("before-after__toggle_active");
+      btnAfter.classList.toggle("before-after__toggle_active");
+      stripe.classList.toggle("before-after__slider-inner-stripe_active")
+    }
+  } catch (err) {
   }
-  btnAfter.onclick = function () {
-    slideBefore.classList.toggle("before-after__slide_active");
-    slideAfter.classList.toggle("before-after__slide_active");
-    btnBefore.classList.toggle("before-after__toggle_active");
-    btnAfter.classList.toggle("before-after__toggle_active");
-    stripe.classList.toggle("before-after__slider-inner-stripe_active")
-  }
+
+
+

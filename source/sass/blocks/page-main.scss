@@ -30,7 +30,10 @@
   }
 
   &__before-after {
-    @include unpadding(true);
+    @media screen and (max-width: $desktop - 1) {
+      @include unpadding(true);
+    }
+
   }
 }
 .page-main_form {

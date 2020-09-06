@@ -4,8 +4,8 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding-top: 25px;
-
+  padding-top: 28px;
+  padding-bottom: 20px;
 
   &__title {
     text-transform: uppercase;
@@ -13,19 +13,15 @@
     line-height: 20px;
     width: 50%;
   }
-
+  &__br {
+    display: none;
+  }
   &__address {
     font-family: "Arial", sans-serif;
     font-size: 14px;
     line-height: 20px;
     color: $special-dark-gray;
     width: 50%;
-
-    br {
-      display: none;
-    }
-
-
   }
 
   &_inner-page {

@@ -134,7 +134,7 @@
   @media screen and (min-width: $tablet) {
     background: none;
     padding-top: 0;
-    padding-bottom: 64px;
+    padding-bottom: 67px;
     background-image: linear-gradient(to bottom, white 0%, white 55.5%, #EAEAEA 55.5%, #EAEAEA 100%);
     &__title {
       margin-bottom: 65px;
@@ -147,7 +147,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 80px;
+      margin-bottom: 85px;
     }
     &__items-highlighted {
       width: 400px;
@@ -190,7 +190,7 @@
       min-height: 517px;
       margin: 0;
       margin: 0 auto;
-      margin-bottom: 24px;
+      margin-bottom: 19px;
       padding: 0;
     }
     &__slide {
@@ -199,16 +199,17 @@
       position: absolute;
       object-fit: cover;
       height: 100%;
-      top: 0;
-
+      margin: 0;
       &_before {
-        left: 20px;
+        top: 0;
+        left: 15px;
         object-position: left center;
-        width: calc(50% - 20px);
+        width: 50%;
       }
 
       &_after {
-        right: 0;
+        top: -1px;
+        right: 2px;
         object-position: right center;
         width: 50%;
       }
@@ -234,8 +235,7 @@
       }
 
       &:active {
-        padding-bottom: 7px;
-        border: none;
+        border-color: transparent;
       }
     }
 
@@ -246,27 +246,33 @@
       border: none;
       border-radius: 6px;
       background-color: #dcdcdc;
-      padding: 3px 5px;
       position: relative;
       margin-bottom: 5px;
     }
 
     &__slider-inner-stripe {
       position: absolute;
-      top: -14px;
-      left: calc(50% - 17px);
+      top: -15px;
+      left: calc(50% - 15px);
       width: 34px;
       height: 34px;
       padding: 12px;
       background: none;
-      background-image: radial-gradient($basic-green 0%, $basic-green 25%, white 26%, white 100%);
-      border: 1px solid $special-gray;
+      background-color: white;
       background-origin: border-box;
       background-clip: border-box;
+      border: 1px solid $special-gray;
       border-radius: 50%;
       transition: all 0.4s;
-      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.16);
-
+      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.16);
+      &::after {
+        content: "";
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: $basic-green;
+      }
       &:hover {
         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.19);
       }
@@ -278,22 +284,28 @@
     }
 
   }
+
   @media screen and (min-width: $desktop) {
-    background-image: linear-gradient(to top, $basic-gray 0%, $basic-gray 68%, white 68%, white 100%);
-    padding-top: 25px;
-    padding-bottom: 67px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(3, min-content);
-
-
+    padding-top: 20px;
+    padding-bottom: 0px;
+    display: block;
+    background-image: none;
     &__title {
       margin-top: 57px;
-      margin-bottom: 146px;
+      margin-bottom: 76px;
       padding: 0;
     }
+
+    &__container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background-image: linear-gradient(to right, $basic-gray 0%, $basic-gray 72.5%, #EAEAEA 72.5%, #EAEAEA 100%);
+      @include unpadding(true);
+      padding-bottom: 67px;
+    }
     &__text {
-      margin-bottom: 67px;
+      margin-top: 70px;
+      margin-bottom: 70px;
       max-width: 436px;
     }
     &__title, &__text, &__statistic {
@@ -302,8 +314,8 @@
     }
     &__slider {
       grid-column: 2 / 3;
-      grid-row: 1 / -1;
       justify-self: end;
+      margin-top: -425px;
     }
 
     &__statistic {
@@ -336,24 +348,36 @@
     }
     &__img-container {
       min-width: 708px;
-      margin-bottom: 45px;
-      margin-right: -20px;
+      margin-bottom: 41px;
+      margin-right: -15px;
     }
     &__slide {
       &_before {
         left: 40px;
-        width: 53%;
+        width: 51.9%;
       }
 
       &_after {
         right: -24px;
-        width: 47%;
+        width: 46%;
       }
     }
     &__toggles {
-      max-width: 576.5px;
+      justify-content: space-between;
+      width: 570px;
       /*margin-left: auto;*/
-      margin-right: 0px;
+      margin-right: 2px;
+      & > * + * {
+        margin-left: 20px;
+      }
     }
+    &__toggle {
+      margin-top: -2px;
+
+    }
+    &__slider-stripe {
+      margin-bottom: 10px;
+    }
+
   }
 }

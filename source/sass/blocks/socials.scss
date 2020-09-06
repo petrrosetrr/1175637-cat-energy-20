@@ -15,6 +15,7 @@
     }
 
     &_vk {
+
       &:hover svg path,
       &:focus svg path {
         fill: $basic-green;
@@ -22,7 +23,9 @@
     }
 
     &_inst {
-
+      @media screen and (max-width: $tablet -1) {
+        margin-bottom: -8px;
+      }
       &:hover svg path,
       &:focus svg path {
         fill: $basic-green;
@@ -30,7 +33,6 @@
     }
 
     &_fb {
-
       /*margin-left: -18px;*/
       &:hover svg path,
       &:focus svg path {
@@ -55,11 +57,14 @@
       &_inst {
         width: 23px;
         height: 23px;
+        margin-left: 0;
+        margin-top: 2px;
       }
 
       &_fb {
-        width: 13px;
-        height: 27px;
+        width: 17px;
+        height: 29px;
+        margin-right: -1px;
       }
     }
   }
